@@ -7,7 +7,7 @@ module Teamtailor
       when 401
         Teamtailor::UnauthorizedRequestError.new
       when 406
-        json_response = JSON.parse body
+        json_response = JSON.parse(body)
         Teamtailor::InvalidApiVersionError.new(
           json_response.dig('errors', 'detail')
         )
@@ -20,4 +20,8 @@ module Teamtailor
   class UnauthorizedRequestError < ClientError; end
 
   class InvalidApiVersionError < ClientError; end
+
+  class JSONError < ClientError; end
+
+  class UnknownResponseTypeError < ClientError; end
 end

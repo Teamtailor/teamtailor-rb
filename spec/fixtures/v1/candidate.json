@@ -1,0 +1,82 @@
+{
+  "data": {
+    "id": "1",
+    "type": "candidates",
+    "links": {
+      "self": "http://api.teamtailor.localhost/v1/candidates/1"
+    },
+    "attributes": {
+      "connected": false,
+      "created-at": "2020-03-18T11:39:32.440+01:00",
+      "email": "applicant1@example.com",
+      "facebook-id": null,
+      "first-name": "Gregoria",
+      "last-name": "Deckow",
+      "linkedin-uid": null,
+      "linkedin-url": null,
+      "phone": null,
+      "picture": null,
+      "pitch": null,
+      "referring-site": null,
+      "referring-url": null,
+      "referred": false,
+      "resume": null,
+      "sourced": false,
+      "unsubscribed": false,
+      "updated-at": "2020-03-18T11:39:32.440+01:00",
+      "facebook-profile": null,
+      "linkedin-profile": null,
+      "tags": []
+    },
+    "relationships": {
+      "department": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/department",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/department"
+        }
+      },
+      "role": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/role",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/role"
+        }
+      },
+      "job-applications": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/job-applications",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/job-applications"
+        }
+      },
+      "questions": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/questions",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/questions"
+        }
+      },
+      "answers": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/answers",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/answers"
+        }
+      },
+      "locations": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/locations",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/locations"
+        }
+      },
+      "uploads": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/uploads",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/uploads"
+        }
+      },
+      "custom-field-values": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/candidates/1/relationships/custom-field-values",
+          "related": "http://api.teamtailor.localhost/v1/candidates/1/custom-field-values"
+        }
+      }
+    }
+  }
+}
