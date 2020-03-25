@@ -16,22 +16,6 @@ module Teamtailor
       payload.dig('attributes', m.to_s.gsub('_', '-'))
     end
 
-    # def first_name
-    #   payload.dig('attributes', 'first-name')
-    # end
-
-    # def last_name
-    #   payload.dig('attributes', 'last-name')
-    # end
-
-    # def email
-    #   payload.dig('attributes', 'email')
-    # end
-
-    # def tags
-    #   payload.dig('attributes', 'tags')
-    # end
-
     private
 
     attr_reader :payload
