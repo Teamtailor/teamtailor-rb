@@ -12,21 +12,25 @@ module Teamtailor
       payload.dig('attributes', 'connected')
     end
 
-    def first_name
-      payload.dig('attributes', 'first-name')
+    def method_missing(m)
+      payload.dig('attributes', m.to_s.gsub('_', '-'))
     end
 
-    def last_name
-      payload.dig('attributes', 'last-name')
-    end
+    # def first_name
+    #   payload.dig('attributes', 'first-name')
+    # end
 
-    def email
-      payload.dig('attributes', 'email')
-    end
+    # def last_name
+    #   payload.dig('attributes', 'last-name')
+    # end
 
-    def tags
-      payload.dig('attributes', 'tags')
-    end
+    # def email
+    #   payload.dig('attributes', 'email')
+    # end
+
+    # def tags
+    #   payload.dig('attributes', 'tags')
+    # end
 
     private
 
