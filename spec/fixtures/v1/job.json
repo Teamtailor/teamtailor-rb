@@ -1,0 +1,108 @@
+{
+  "data": {
+    "id": "26",
+    "type": "jobs",
+    "links": {
+      "careersite-job-url": "http://company0.teamtailor.localhost/jobs/26-ruby-on-rails-developer",
+      "careersite-job-apply-url": "https://company0.teamtailor.localhost/jobs/26-ruby-on-rails-developer/applications/new",
+      "careersite-job-apply-iframe-url": "https://company0.teamtailor.localhost/jobs/26-ruby-on-rails-developer/applications/new?iframe=true",
+      "self": "http://api.teamtailor.localhost/v1/jobs/26"
+    },
+    "attributes": {
+      "apply-button-text": "",
+      "body": "<p>Come write some Rails with us!<br></p>",
+      "end-date": null,
+      "human-status": "published",
+      "internal": false,
+      "picture": null,
+      "pinned": false,
+      "start-date": null,
+      "status": "open",
+      "tags": [],
+      "title": "Ruby on Rails developer",
+      "pitch": "",
+      "external-application-url": "",
+      "name-requirement": "optional",
+      "resume-requirement": "optional",
+      "cover-letter-requirement": "optional",
+      "phone-requirement": "optional",
+      "created-at": "2020-03-25T13:45:10.480+01:00",
+      "sharing-image-layout": "default",
+      "mailbox": "job-f519c9f6-2627-492a-8b76-c4f72c2215ef@inbound.teamtailor.localhost"
+    },
+    "relationships": {
+      "department": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/department",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/department"
+        }
+      },
+      "role": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/role",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/role"
+        }
+      },
+      "location": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/location",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/location"
+        }
+      },
+      "locations": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/locations",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/locations"
+        }
+      },
+      "user": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/user",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/user"
+        }
+      },
+      "questions": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/questions",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/questions"
+        }
+      },
+      "candidates": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/candidates",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/candidates"
+        }
+      },
+      "stages": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/stages",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/stages"
+        }
+      },
+      "colleagues": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/colleagues",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/colleagues"
+        }
+      },
+      "team-memberships": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/team-memberships",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/team-memberships"
+        }
+      },
+      "picked-questions": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/picked-questions",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/picked-questions"
+        }
+      },
+      "requisition": {
+        "links": {
+          "self": "http://api.teamtailor.localhost/v1/jobs/26/relationships/requisition",
+          "related": "http://api.teamtailor.localhost/v1/jobs/26/requisition"
+        }
+      }
+    }
+  }
+}

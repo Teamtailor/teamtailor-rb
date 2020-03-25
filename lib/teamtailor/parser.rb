@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'teamtailor/parser/candidate'
+require 'teamtailor/parser/job'
 
 module Teamtailor
   class Parser
@@ -11,8 +12,8 @@ module Teamtailor
     def parse
       data.map do |record|
         case record&.dig('type')
-        when 'candidates'
-          Teamtailor::Candidate.new(record)
+        when 'candidates' then Teamtailor::Candidate.new(record)
+        when 'jobs' then Teamtailor::Job.new(record)
 
         else
           raise Teamtailor::UnknownResponseTypeError.new(record&.dig('type'))

@@ -23,6 +23,19 @@ module Teamtailor
       ).call
     end
 
+    def jobs(page: 1)
+      Teamtailor::Request.new(
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: '/v1/jobs',
+        params: {
+          'page[number]' => page,
+          'page[size]' => 30
+        }
+      ).call
+    end
+
     private
 
     attr_reader :base_url, :api_token, :api_version

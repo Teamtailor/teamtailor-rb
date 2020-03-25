@@ -27,6 +27,21 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context 'parsing a list of jobs' do
+    it 'parses the response into an array of Teamtailor::Job' do
+      payload = File.read 'spec/fixtures/v1/jobs.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 2
+      expect(result.map(&:title)).to include(
+        'Ruby on Rails developer',
+        'EmberJS Developer'
+      )
+    end
+  end
+
   context 'getting an unknown record' do
     it 'raises an Teamtailor::UnknownResponseTypeError' do
       payload = { 'id' => 3, 'type' => 'foo' }
