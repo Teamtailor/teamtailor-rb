@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "id": "33",
+      "type": "users",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/users/33"
+      },
+      "attributes": {
+        "description": null,
+        "facebook-profile": null,
+        "hide-email": null,
+        "instagram-profile": null,
+        "linkedin-profile": null,
+        "login-email": "email29@example.com",
+        "name": "Ortiz12",
+        "notification-daily-digest": true,
+        "other-profile": null,
+        "phone": null,
+        "picture": null,
+        "role": "admin",
+        "title": null,
+        "twitter-profile": null,
+        "username": "ortiz",
+        "visible": null,
+        "signature": "<p>-- <br>Ortiz12<br>Company #0</p>",
+        "notification-job": true,
+        "notification-mention": true,
+        "notification-candidate-message": true,
+        "notification-lead-message": true,
+        "notification-connected-candidate": true,
+        "notification-hiring-team-application": false,
+        "notification-recruiter-application": true,
+        "notification-removal-request": true,
+        "notification-gdpr-digest": true,
+        "email": "email29@example.com"
+      },
+      "relationships": {
+        "department": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/33/relationships/department",
+            "related": "http://api.teamtailor.localhost/v1/users/33/department"
+          }
+        },
+        "location": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/33/relationships/location",
+            "related": "http://api.teamtailor.localhost/v1/users/33/location"
+          }
+        },
+        "jobs": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/33/relationships/jobs",
+            "related": "http://api.teamtailor.localhost/v1/users/33/jobs"
+          }
+        }
+      }
+    },
+    {
+      "id": "34",
+      "type": "users",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/users/34"
+      },
+      "attributes": {
+        "description": null,
+        "facebook-profile": null,
+        "hide-email": null,
+        "instagram-profile": null,
+        "linkedin-profile": null,
+        "login-email": "admin@teamtailor.localhost",
+        "name": null,
+        "notification-daily-digest": true,
+        "other-profile": null,
+        "phone": null,
+        "picture": null,
+        "role": "admin",
+        "title": null,
+        "twitter-profile": null,
+        "username": "admin",
+        "visible": null,
+        "signature": "<p>-- <br><br>Company #0</p>",
+        "notification-job": true,
+        "notification-mention": true,
+        "notification-candidate-message": true,
+        "notification-lead-message": true,
+        "notification-connected-candidate": true,
+        "notification-hiring-team-application": false,
+        "notification-recruiter-application": true,
+        "notification-removal-request": true,
+        "notification-gdpr-digest": true,
+        "email": null
+      },
+      "relationships": {
+        "department": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/34/relationships/department",
+            "related": "http://api.teamtailor.localhost/v1/users/34/department"
+          }
+        },
+        "location": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/34/relationships/location",
+            "related": "http://api.teamtailor.localhost/v1/users/34/location"
+          }
+        },
+        "jobs": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/users/34/relationships/jobs",
+            "related": "http://api.teamtailor.localhost/v1/users/34/jobs"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 2,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/users?page%5Bnumber%5D=1&page%5Bsize%5D=2",
+    "last": "http://api.teamtailor.localhost/v1/users?page%5Bnumber%5D=1&page%5Bsize%5D=2"
+  }
+}
