@@ -108,10 +108,4 @@ RSpec.describe Teamtailor::Request do
       end
     end
   end
-
-  private
-
-  def json_response
-    JSON.parse response.body
-  end
 end
