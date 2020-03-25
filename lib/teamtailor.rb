@@ -1,4 +1,6 @@
-require "teamtailor/version"
+# frozen_string_literal: true
+
+require 'teamtailor/version'
 
 module Teamtailor
   class Error < StandardError; end
