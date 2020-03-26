@@ -50,4 +50,16 @@ RSpec.describe Teamtailor::PageResult do
       end.to(raise_error { Teamtailor::JSONError })
     end
   end
+
+  describe '#has_next_page?' do
+    it 'works' do
+      result = Teamtailor::PageResult.new({
+        links: { next: 'some-url' }
+      }.to_json)
+      expect(result.has_next_page?).to eq true
+
+      result = Teamtailor::PageResult.new({ links: { next: nil } }.to_json)
+      expect(result.has_next_page?).to eq false
+    end
+  end
 end

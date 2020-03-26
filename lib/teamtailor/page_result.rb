@@ -36,6 +36,10 @@ module Teamtailor
       json_response.dig('links', 'last')
     end
 
+    def has_next_page?
+      !next_page_url.nil?
+    end
+
     private
 
     attr_reader :json_response
