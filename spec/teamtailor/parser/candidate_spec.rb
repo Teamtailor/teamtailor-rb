@@ -18,4 +18,17 @@ RSpec.describe Teamtailor::Candidate do
     it { expect(candidate.tags).to eq [] }
     it { expect(candidate.email).to eq 'applicant1@example.com' }
   end
+
+  describe 'serializing and deserializing' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/candidate.json'
+      json_payload = JSON.parse payload
+
+      candidate = Teamtailor::Candidate.new json_payload.dig('data')
+
+      deserialized_candidate = Teamtailor::Candidate.deserialize candidate.serialize
+
+      expect(candidate.payload).to eq deserialized_candidate.payload
+    end
+  end
 end
