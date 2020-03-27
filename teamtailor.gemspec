@@ -14,8 +14,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/bzf/teamtailor-gem'
-  spec.metadata['changelog_uri'] = 'https://github.com/bzf/teamtailor-gem/master/CHANGELOG.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/bzf/teamtailor-rb'
+  spec.metadata['changelog_uri'] = 'https://github.com/bzf/teamtailor-rb/master/CHANGELOG.md'
 
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_dependency 'typhoeus', '~> 1.3.1'
