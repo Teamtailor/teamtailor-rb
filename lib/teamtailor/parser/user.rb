@@ -1,7 +1,7 @@
 module Teamtailor
   class User
-    def initialize(payload)
-      @payload = payload
+    def initialize(data)
+      @data = data
     end
 
     def self.deserialize(value)
@@ -9,19 +9,19 @@ module Teamtailor
     end
 
     def serialize
-      payload
+      data
     end
 
     def id
-      payload.dig('id').to_i
+      data.dig('id').to_i
     end
 
     def method_missing(m)
-      payload.dig('attributes', m.to_s.gsub('_', '-'))
+      data.dig('attributes', m.to_s.gsub('_', '-'))
     end
 
     private
 
-    attr_reader :payload
+    attr_reader :data
   end
 end
