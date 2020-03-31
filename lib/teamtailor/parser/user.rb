@@ -4,16 +4,5 @@ require 'teamtailor/record'
 
 module Teamtailor
   class User < Record
-    def self.deserialize(value)
-      new(value)
-    end
-
-    def serialize
-      data
-    end
-
-    def id
-      data.dig('id').to_i
-    end
   end
 end

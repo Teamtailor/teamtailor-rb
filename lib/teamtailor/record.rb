@@ -5,6 +5,18 @@ module Teamtailor
       @included = included
     end
 
+    def self.deserialize(value)
+      payload = JSON.parse value
+      new(payload['data'], payload['included'])
+    end
+
+    def serialize
+      {
+        data: data,
+        included: included
+      }.to_json
+    end
+
     def method_missing(m)
       if m == :id
         data.dig('id').to_i

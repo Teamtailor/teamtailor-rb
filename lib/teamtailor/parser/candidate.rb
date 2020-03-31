@@ -4,18 +4,6 @@ require 'teamtailor/record'
 
 module Teamtailor
   class Candidate < Record
-    def self.deserialize(value)
-      new(value)
-    end
-
-    def serialize
-      data
-    end
-
-    def id
-      data.dig('id').to_i
-    end
-
     def connected?
       data.dig('attributes', 'connected')
     end

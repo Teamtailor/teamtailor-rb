@@ -30,6 +30,20 @@ RSpec.describe Teamtailor::Record do
     end
   end
 
+  describe 'serializing' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/candidate.json'
+      json_payload = JSON.parse payload
+
+      candidate = Teamtailor::Record.new json_payload.dig('data')
+
+      deserialized_candidate = Teamtailor::Record.deserialize candidate.serialize
+
+      expect(candidate.payload).to eq deserialized_candidate.payload
+      expect(candidate.id).to eq deserialized_candidate.id
+    end
+  end
+
   describe 'non-loaded relationships' do
     it 'returns unloaded relations' do
       record = Teamtailor::Record.new('relationships' => { 'user' => {} })
@@ -71,6 +85,31 @@ RSpec.describe Teamtailor::Record do
       relation = record.user
       expect(relation).to be_loaded
       expect(relation.record.name).to eq 'Marshall Mathers'
+    end
+
+    describe 'serializing' do
+      it 'works' do
+        payload = File.read 'spec/fixtures/v1/job_application_included_candidate_job.json'
+        json_payload = JSON.parse payload
+
+        job_application = Teamtailor::Record.new(
+          json_payload.dig('data'),
+          json_payload.dig('included')
+        )
+        expect(job_application.candidate).to be_loaded
+        expect(job_application.candidate.record.id).to eq 410
+        expect(job_application.job).to be_loaded
+        expect(job_application.job.record.id).to eq 26
+
+        deserialized_job_application =
+          Teamtailor::Record.deserialize(job_application.serialize)
+        expect(job_application.payload).to eq deserialized_job_application.payload
+
+        expect(deserialized_job_application.candidate).to be_loaded
+        expect(deserialized_job_application.candidate.record.id).to eq 410
+        expect(deserialized_job_application.job).to be_loaded
+        expect(deserialized_job_application.job.record.id).to eq 26
+      end
     end
   end
 end
