@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Add `Teamtailor::JobApplication` and `Client#job_applications` (`062fa7`)
+
 ## v0.2.0 - 2020-03-31
 
 - Add support for accessing relationships on records (`1218aa`)
