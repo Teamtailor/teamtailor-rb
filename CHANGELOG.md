@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v0.2.2 - 2020-03-31
+
 - Move serialization logic in the `Teamtailor::Record` base class (`9ec63a0`)
 - Fix serializing/deserializing loaded relationships for
   `Teamtailor::JobApplication` (`428e2d`) 
