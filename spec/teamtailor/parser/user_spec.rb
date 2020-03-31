@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'teamtailor/parser/user'
 
 RSpec.describe Teamtailor::User do
@@ -10,7 +12,7 @@ RSpec.describe Teamtailor::User do
     end
 
     it { expect(user.id).to eq 34 }
-    it { expect(user.login_email).to eq "admin@teamtailor.localhost" }
+    it { expect(user.login_email).to eq 'admin@teamtailor.localhost' }
   end
 
   describe 'serializing and deserializing' do

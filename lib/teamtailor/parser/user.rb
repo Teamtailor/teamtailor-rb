@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 module Teamtailor
   class User
-    def initialize(data)
+    def initialize(data, _included = {})
       @data = data
+      @included = included
     end
 
     def self.deserialize(value)

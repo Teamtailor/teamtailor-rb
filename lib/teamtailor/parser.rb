@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'teamtailor/relationship'
 require 'teamtailor/parser/candidate'
 require 'teamtailor/parser/job'
 require 'teamtailor/parser/user'
@@ -13,12 +14,12 @@ module Teamtailor
     def parse
       data.map do |record|
         case record&.dig('type')
-        when 'candidates' then Teamtailor::Candidate.new(record)
-        when 'jobs' then Teamtailor::Job.new(record)
-        when 'users' then Teamtailor::User.new(record)
+        when 'candidates' then Teamtailor::Candidate.new(record, included)
+        when 'jobs' then Teamtailor::Job.new(record, included)
+        when 'users' then Teamtailor::User.new(record, included)
 
         else
-          raise Teamtailor::UnknownResponseTypeError.new(record&.dig('type'))
+          raise Teamtailor::UnknownResponseTypeError, record&.dig('type')
         end
       end
     end
@@ -33,6 +34,10 @@ module Teamtailor
 
     def data
       [payload&.dig('data')].flatten
+    end
+
+    def included
+      payload&.dig('included')
     end
   end
 end

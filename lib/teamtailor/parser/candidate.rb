@@ -1,6 +1,6 @@
 module Teamtailor
   class Candidate
-    def initialize(data)
+    def initialize(data, _included = {})
       @data = data
     end
 

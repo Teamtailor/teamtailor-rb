@@ -1,7 +1,8 @@
 module Teamtailor
   class Job
-    def initialize(data)
+    def initialize(data, included = {})
       @data = data
+      @included = included
     end
 
     def self.deserialize(value)
@@ -20,12 +21,16 @@ module Teamtailor
       data.dig('links', 'careersite-job-url')
     end
 
+    def user
+      Teamtailor::Relationship.new('user', data.dig('relationships'), included)
+    end
+
     def method_missing(m)
       data.dig('attributes', m.to_s.gsub('_', '-'))
     end
 
     private
 
-    attr_reader :data
+    attr_reader :data, :included
   end
 end
