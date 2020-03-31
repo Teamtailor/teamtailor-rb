@@ -38,6 +38,20 @@ module Teamtailor
       ).call
     end
 
+    def job_applications(page: 1, include: [])
+      Teamtailor::Request.new(
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: '/v1/job-applications',
+        params: {
+          'page[number]' => page,
+          'page[size]' => 30,
+          'include' => include.join(',')
+        }
+      ).call
+    end
+
     def users(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,

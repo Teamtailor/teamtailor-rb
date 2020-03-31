@@ -4,6 +4,7 @@ require 'teamtailor/relationship'
 require 'teamtailor/parser/candidate'
 require 'teamtailor/parser/job'
 require 'teamtailor/parser/user'
+require 'teamtailor/parser/job_application'
 
 module Teamtailor
   class Parser
@@ -17,6 +18,7 @@ module Teamtailor
         when 'candidates' then Teamtailor::Candidate.new(record, included)
         when 'jobs' then Teamtailor::Job.new(record, included)
         when 'users' then Teamtailor::User.new(record, included)
+        when 'job-applications' then Teamtailor::JobApplication.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')

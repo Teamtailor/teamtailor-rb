@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "id": "634",
+      "type": "job-applications",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/job-applications/634"
+      },
+      "attributes": {
+        "cover-letter": null,
+        "created-at": "2020-03-31T15:46:24.154+02:00",
+        "referring-site": null,
+        "referring-url": null,
+        "rejected-at": null,
+        "sourced": true,
+        "updated-at": "2020-03-31T15:46:24.154+02:00",
+        "changed-stage-at": "2020-03-31T15:46:24.138+02:00"
+      },
+      "relationships": {
+        "candidate": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/634/relationships/candidate",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/634/candidate"
+          }
+        },
+        "job": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/634/relationships/job",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/634/job"
+          }
+        },
+        "stage": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/634/relationships/stage",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/634/stage"
+          }
+        },
+        "reject-reason": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/634/relationships/reject-reason",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/634/reject-reason"
+          }
+        }
+      }
+    },
+    {
+      "id": "635",
+      "type": "job-applications",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/job-applications/635"
+      },
+      "attributes": {
+        "cover-letter": null,
+        "created-at": "2020-03-31T15:46:52.883+02:00",
+        "referring-site": null,
+        "referring-url": null,
+        "rejected-at": null,
+        "sourced": true,
+        "updated-at": "2020-03-31T15:46:52.883+02:00",
+        "changed-stage-at": "2020-03-31T15:46:52.871+02:00"
+      },
+      "relationships": {
+        "candidate": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/635/relationships/candidate",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/635/candidate"
+          }
+        },
+        "job": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/635/relationships/job",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/635/job"
+          }
+        },
+        "stage": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/635/relationships/stage",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/635/stage"
+          }
+        },
+        "reject-reason": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/job-applications/635/relationships/reject-reason",
+            "related": "http://api.teamtailor.localhost/v1/job-applications/635/reject-reason"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 2,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/job-applications?page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.localhost/v1/job-applications?page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
