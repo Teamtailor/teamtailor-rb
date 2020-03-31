@@ -65,6 +65,41 @@ irb(main):041:0> jobs.map &:title
 => ["EmberJS Developer", "Ruby on Rails developer"]
 ```
 
+### Relationships
+
+The API allows you to include associated data when requesting data to help
+you load associations without having to make any additional requests.
+To do this, you can pass what you want to include when making the request.
+
+To fetch jobs with all associated `user`s loaded, you can call `Client#jobs`
+like this:
+
+```ruby
+irb(main):006:0> page_result = @client.jobs(page: 1, include: [:user])
+irb(main):007:0> page_result.records.first.user.record.login_email
+=> "admin@teamtailor.localhost"
+```
+
+If you try to access a relationship, without having included it when loading it
+from the server, it'll raise a `Teamtailor::UnloadedRelationError`:
+
+```ruby
+irb(main):010:0> page_result = @client.jobs(page: 1, include: [])
+irb(main):011:0> page_result.records.first.user.record
+Traceback (most recent call last):
+        ...
+        1: from ~/teamtailor/lib/teamtailor/relationship.rb:16:in `record'
+Teamtailor::UnloadedRelationError (Teamtailor::UnloadedRelationError)
+```
+
+To check if a relation has been loaded or not you can use the
+`Relationship#loaded?` method to check before calling it:
+
+```ruby
+irb(main):012:0> page_result = @client.jobs(page: 1, include: [:user])
+irb(main):013:0> page_result.records.first.user.loaded?
+=> true
+```
 
 ## Development
 
