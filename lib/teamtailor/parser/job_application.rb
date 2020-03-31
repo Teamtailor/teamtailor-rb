@@ -5,11 +5,15 @@ require 'teamtailor/record'
 module Teamtailor
   class JobApplication < Record
     def self.deserialize(value)
-      new(value)
+      payload = JSON.parse value
+      new(payload['data'], payload['included'])
     end
 
     def serialize
-      data
+      {
+        data: data,
+        included: included
+      }.to_json
     end
 
     def id
