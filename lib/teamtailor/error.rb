@@ -24,4 +24,6 @@ module Teamtailor
   class JSONError < ClientError; end
 
   class UnknownResponseTypeError < ClientError; end
+
+  class UnloadedRelationError < ClientError; end
 end

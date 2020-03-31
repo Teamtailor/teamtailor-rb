@@ -2,7 +2,7 @@
 
 module Teamtailor
   class Relationship
-    def initialize(relation_name, relationships, included)
+    def initialize(relation_name, relationships = {}, included = {})
       @relation_name = relation_name
       @relationships = relationships
       @included = included
@@ -13,6 +13,8 @@ module Teamtailor
     end
 
     def record
+      raise Teamtailor::UnloadedRelationError unless loaded?
+
       record_json = included.find do |k|
         k['id'] == record_id && k['type'] == record_type
       end
