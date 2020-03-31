@@ -10,7 +10,7 @@ module Teamtailor
       @api_version = api_version
     end
 
-    def candidates(page: 1)
+    def candidates(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,
         api_token: api_token,
@@ -18,12 +18,13 @@ module Teamtailor
         path: '/v1/candidates',
         params: {
           'page[number]' => page,
-          'page[size]' => 30
+          'page[size]' => 30,
+          'include' => include.join(',')
         }
       ).call
     end
 
-    def jobs(page: 1)
+    def jobs(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,
         api_token: api_token,
@@ -31,12 +32,13 @@ module Teamtailor
         path: '/v1/jobs',
         params: {
           'page[number]' => page,
-          'page[size]' => 30
+          'page[size]' => 30,
+          'include' => include.join(',')
         }
       ).call
     end
 
-    def users(page: 1)
+    def users(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,
         api_token: api_token,
@@ -44,7 +46,8 @@ module Teamtailor
         path: '/v1/users',
         params: {
           'page[number]' => page,
-          'page[size]' => 30
+          'page[size]' => 30,
+          'include' => include.join(',')
         }
       ).call
     end
