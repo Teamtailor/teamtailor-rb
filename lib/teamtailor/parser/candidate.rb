@@ -1,9 +1,9 @@
-module Teamtailor
-  class Candidate
-    def initialize(data, _included = {})
-      @data = data
-    end
+# frozen_string_literal: true
 
+require 'teamtailor/record'
+
+module Teamtailor
+  class Candidate < Record
     def self.deserialize(value)
       new(value)
     end
@@ -19,13 +19,5 @@ module Teamtailor
     def connected?
       data.dig('attributes', 'connected')
     end
-
-    def method_missing(m)
-      data.dig('attributes', m.to_s.gsub('_', '-'))
-    end
-
-    private
-
-    attr_reader :data
   end
 end
