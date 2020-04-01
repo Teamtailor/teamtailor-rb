@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'teamtailor'
-
-require 'webmock/rspec'
 
 require 'simplecov'
 SimpleCov.start
+
+require 'teamtailor'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
