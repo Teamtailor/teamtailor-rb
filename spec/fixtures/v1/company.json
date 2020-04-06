@@ -1,0 +1,22 @@
+{
+  "data": {
+    "id": "foobar",
+    "type": "companies",
+    "links": {
+      "self": "http://api.teamtailor.career/v1/companies/ZPXFT2VMtr8"
+    },
+    "attributes": {
+      "locale": "en",
+      "website": null,
+      "name": "Teamtailor"
+    },
+    "relationships": {
+      "manager": {
+        "links": {
+          "self": "http://api.teamtailor.career/v1/companies/ZPXFT2VMtr8/relationships/manager",
+          "related": "http://api.teamtailor.career/v1/companies/ZPXFT2VMtr8/manager"
+        }
+      }
+    }
+  }
+}

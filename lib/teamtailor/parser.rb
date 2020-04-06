@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'teamtailor/relationship'
 require 'teamtailor/parser/candidate'
 require 'teamtailor/parser/job'
 require 'teamtailor/parser/user'
 require 'teamtailor/parser/job_application'
+require 'teamtailor/parser/company'
 
 module Teamtailor
   class Parser
@@ -19,6 +19,7 @@ module Teamtailor
         when 'jobs' then Teamtailor::Job.new(record, included)
         when 'users' then Teamtailor::User.new(record, included)
         when 'job-applications' then Teamtailor::JobApplication.new(record, included)
+        when 'companies' then Teamtailor::Company.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')

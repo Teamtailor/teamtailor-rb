@@ -10,6 +10,18 @@ module Teamtailor
       @api_version = api_version
     end
 
+    def company(include: [])
+      Teamtailor::Request.new(
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: '/v1/company',
+        params: {
+          'include' => include.join(',')
+        }
+      ).call
+    end
+
     def candidates(page: 1, include: [])
       Teamtailor::Request.new(
         base_url: base_url,

@@ -1,3 +1,5 @@
+require 'teamtailor/relationship'
+
 module Teamtailor
   class Record
     def initialize(data, included = {})

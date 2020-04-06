@@ -3,6 +3,19 @@
 require 'teamtailor/parser'
 
 RSpec.describe Teamtailor::Parser do
+  context 'parsing a company' do
+    it 'parses the response into an array of Teamtailor::Company' do
+      payload = File.read 'spec/fixtures/v1/company.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 1
+      expect(result.first.id).to eq 'foobar'
+      expect(result.first.name).to eq 'Teamtailor'
+    end
+  end
+
   context 'parsing a single candidate' do
     it 'parses the response into an array of Teamtailor::Candidate' do
       payload = File.read 'spec/fixtures/v1/candidate.json'
