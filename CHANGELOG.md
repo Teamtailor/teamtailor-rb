@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v0.2.3 - 2020-04-06
+
 - Add `Teamtailor::Company` and `Client#company` for fetching it (`05dde0`)
 
 ## v0.2.2 - 2020-03-31
