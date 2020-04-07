@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Teamtailor::RejectReason` and `Client#reject_reasons`
 - Add `Teamtailor::Stage` and `Client#stages` for fetching it (`2179b1`)
 
 ## v0.2.3 - 2020-04-06

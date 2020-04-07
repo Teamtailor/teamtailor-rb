@@ -1,0 +1,202 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/1"
+      },
+      "attributes": {
+        "reason": "Role not a fit",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/1/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/1/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/2"
+      },
+      "attributes": {
+        "reason": "Took another job",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/2/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/2/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "3",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/3"
+      },
+      "attributes": {
+        "reason": "Salary & Benefits",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/3/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/3/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "4",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/4"
+      },
+      "attributes": {
+        "reason": "Personal reasons",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/4/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/4/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "5",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/5"
+      },
+      "attributes": {
+        "reason": "Cultural fit",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/5/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/5/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "6",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/6"
+      },
+      "attributes": {
+        "reason": "Commute & location",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/6/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/6/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "7",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/7"
+      },
+      "attributes": {
+        "reason": "Staying at current company",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/7/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/7/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "8",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/8"
+      },
+      "attributes": {
+        "reason": "Slow recruitment process",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/8/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/8/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "9",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/9"
+      },
+      "attributes": {
+        "reason": "Not interested in the first place",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/9/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/9/job-applications"
+          }
+        }
+      }
+    },
+    {
+      "id": "10",
+      "type": "reject-reasons",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/reject-reasons/10"
+      },
+      "attributes": {
+        "reason": "Other reasons",
+        "rejected-by-company": false
+      },
+      "relationships": {
+        "job-applications": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/reject-reasons/10/relationships/job-applications",
+            "related": "http://api.teamtailor.career/v1/reject-reasons/10/job-applications"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 10,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.career/v1/reject-reasons?page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.career/v1/reject-reasons?page%5Bnumber%5D=2&page%5Bsize%5D=10"
+  }
+}

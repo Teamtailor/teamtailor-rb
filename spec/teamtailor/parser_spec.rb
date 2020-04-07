@@ -133,6 +133,18 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context 'parsing reject reasons' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/reject_reasons.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 10
+      expect(result.map(&:id)).to include(1, 2, 5)
+    end
+  end
+
   context 'getting an unknown record' do
     it 'raises an Teamtailor::UnknownResponseTypeError' do
       payload = { 'id' => 3, 'type' => 'foo' }

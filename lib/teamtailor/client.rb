@@ -92,6 +92,20 @@ module Teamtailor
       ).call
     end
 
+    def reject_reasons(page: 1, include: [])
+      Teamtailor::Request.new(
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: '/v1/reject-reasons',
+        params: {
+          'page[number]' => page,
+          'page[size]' => 30,
+          'include' => include.join(',')
+        }
+      ).call
+    end
+
     private
 
     attr_reader :base_url, :api_token, :api_version
