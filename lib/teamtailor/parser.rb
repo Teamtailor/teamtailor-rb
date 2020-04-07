@@ -7,6 +7,7 @@ require 'teamtailor/parser/job_application'
 require 'teamtailor/parser/company'
 require 'teamtailor/parser/stage'
 require 'teamtailor/parser/reject_reason'
+require 'teamtailor/parser/department'
 
 module Teamtailor
   class Parser
@@ -24,6 +25,7 @@ module Teamtailor
         when 'companies' then Teamtailor::Company.new(record, included)
         when 'stages' then Teamtailor::Stage.new(record, included)
         when 'reject-reasons' then Teamtailor::RejectReason.new(record, included)
+        when 'departments' then Teamtailor::Department.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')

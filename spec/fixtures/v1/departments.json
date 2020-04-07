@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "departments",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/departments/1"
+      },
+      "attributes": {
+        "name": "Product Development",
+        "people-headline": null,
+        "people-text": null,
+        "row-order": 0,
+        "pictures": [],
+        "headline": null,
+        "text": null
+      },
+      "relationships": {
+        "roles": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/departments/1/relationships/roles",
+            "related": "http://api.teamtailor.career/v1/departments/1/roles"
+          }
+        },
+        "team-memberships": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/departments/1/relationships/team-memberships",
+            "related": "http://api.teamtailor.career/v1/departments/1/team-memberships"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "departments",
+      "links": {
+        "self": "http://api.teamtailor.career/v1/departments/2"
+      },
+      "attributes": {
+        "name": "Sales",
+        "people-headline": null,
+        "people-text": null,
+        "row-order": 1073741824,
+        "pictures": [],
+        "headline": null,
+        "text": null
+      },
+      "relationships": {
+        "roles": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/departments/2/relationships/roles",
+            "related": "http://api.teamtailor.career/v1/departments/2/roles"
+          }
+        },
+        "team-memberships": {
+          "links": {
+            "self": "http://api.teamtailor.career/v1/departments/2/relationships/team-memberships",
+            "related": "http://api.teamtailor.career/v1/departments/2/team-memberships"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "texts": {
+      "name-singular": "department",
+      "name-plural": "departments",
+      "all": "All departments"
+    },
+    "record-count": 2,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.career/v1/departments?page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.career/v1/departments?page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
