@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Teamtailor::Location` and `Client#locations`
 - Add `Teamtailor::Department` and `Client#departments`
 - Add `Teamtailor::RejectReason` and `Client#reject_reasons`
 - Add `Teamtailor::Stage` and `Client#stages` for fetching it (`2179b1`)
