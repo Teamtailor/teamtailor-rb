@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v0.2.4 - 2020-04-07
+
 - Add `Teamtailor::Location` and `Client#locations`
 - Add `Teamtailor::Department` and `Client#departments`
 - Add `Teamtailor::RejectReason` and `Client#reject_reasons`
