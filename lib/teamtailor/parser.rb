@@ -5,6 +5,7 @@ require 'teamtailor/parser/job'
 require 'teamtailor/parser/user'
 require 'teamtailor/parser/job_application'
 require 'teamtailor/parser/company'
+require 'teamtailor/parser/stage'
 
 module Teamtailor
   class Parser
@@ -20,6 +21,7 @@ module Teamtailor
         when 'users' then Teamtailor::User.new(record, included)
         when 'job-applications' then Teamtailor::JobApplication.new(record, included)
         when 'companies' then Teamtailor::Company.new(record, included)
+        when 'stages' then Teamtailor::Stage.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')
