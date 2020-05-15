@@ -36,7 +36,11 @@ module Teamtailor
       ).call
     end
 
-    def jobs(page: 1, include: [])
+    def jobs(page: 1, include: [], filters: {})
+      filter_params = filters.keys.map do |key|
+        { "filter[#{key}]" => filters[key] }
+      end
+
       Teamtailor::Request.new(
         base_url: base_url,
         api_token: api_token,
@@ -45,8 +49,8 @@ module Teamtailor
         params: {
           'page[number]' => page,
           'page[size]' => 30,
-          'include' => include.join(',')
-        }
+          'include' => include.join(','),
+        }.merge(*filter_params)
       ).call
     end
 

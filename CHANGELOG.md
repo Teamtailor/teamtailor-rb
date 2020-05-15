@@ -1,5 +1,9 @@
 ## Unreleased
 
+## v0.2.5 - 2020-05-15
+
+- Add `filters:` as an argument to `Client#jobs`
+
 ## v0.2.4 - 2020-04-07
 
 - Add `Teamtailor::Location` and `Client#locations`
@@ -15,7 +19,7 @@
 
 - Move serialization logic in the `Teamtailor::Record` base class (`9ec63a0`)
 - Fix serializing/deserializing loaded relationships for
-  `Teamtailor::JobApplication` (`428e2d`) 
+  `Teamtailor::JobApplication` (`428e2d`)
 
 ## v0.2.1 - 2020-03-31
 
