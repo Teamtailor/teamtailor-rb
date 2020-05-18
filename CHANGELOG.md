@@ -1,5 +1,6 @@
 ## Unreleased
 
+- Add `Teamtailor::Referral` and `Client#referrals`
 - Add `Teamtailor::CustomField` and `Teamtailor::CustomFieldValue`
 - Add `Client#custom_fields` and `Client#custom_field_values`
 
