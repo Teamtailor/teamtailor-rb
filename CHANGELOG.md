@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v0.2.6 - 2020-05-18
+
 - Add `Teamtailor::PartnerResult` and `Client#partner_results`
 - Add `Teamtailor::Referral` and `Client#referrals`
 - Add `Teamtailor::CustomField` and `Teamtailor::CustomFieldValue`
