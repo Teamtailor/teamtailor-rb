@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "custom-fields",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/custom-fields/1"
+      },
+      "attributes": {
+        "api-name": "drivers-license",
+        "name": "Drivers license?",
+        "field-type": "CustomField::Checkbox",
+        "created-at": "2020-05-18T09:43:13.168+02:00",
+        "updated-at": "2020-05-18T09:43:13.168+02:00"
+      },
+      "relationships": {
+        "custom-field-values": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/custom-fields/1/relationships/custom-field-values",
+            "related": "http://api.teamtailor.localhost/v1/custom-fields/1/custom-field-values"
+          }
+        }
+      }
+    },
+    {
+      "id": "2",
+      "type": "custom-fields",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/custom-fields/2"
+      },
+      "attributes": {
+        "api-name": "github-profile",
+        "name": "Github profile",
+        "field-type": "CustomField::Url",
+        "created-at": "2020-05-18T09:43:20.694+02:00",
+        "updated-at": "2020-05-18T09:43:20.694+02:00"
+      },
+      "relationships": {
+        "custom-field-values": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/custom-fields/2/relationships/custom-field-values",
+            "related": "http://api.teamtailor.localhost/v1/custom-fields/2/custom-field-values"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 2,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/custom-fields?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.localhost/v1/custom-fields?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}

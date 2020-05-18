@@ -1,0 +1,37 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "custom-field-values",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/custom-field-values/1"
+      },
+      "attributes": {
+        "field-type": "CustomField::Url",
+        "value": "https://github.com/bzf"
+      },
+      "relationships": {
+        "custom-field": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/custom-field-values/1/relationships/custom-field",
+            "related": "http://api.teamtailor.localhost/v1/custom-field-values/1/custom-field"
+          }
+        },
+        "owner": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/custom-field-values/1/relationships/owner",
+            "related": "http://api.teamtailor.localhost/v1/custom-field-values/1/owner"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 1,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/custom-field-values?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.localhost/v1/custom-field-values?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}

@@ -171,6 +171,34 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context 'parsing custom fields' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/custom-fields.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 2
+      expect(result.map(&:id)).to include(1, 2)
+      expect(result.map(&:name)).to include('Drivers license?', 'Github profile')
+      expect(result.map(&:api_name)).to include('drivers-license', 'github-profile')
+      expect(result.map(&:field_type)).to include('CustomField::Checkbox', 'CustomField::Url')
+    end
+  end
+
+  context 'parsing custom field values' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/custom-field-values.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 1
+      expect(result.map(&:field_type)).to include('CustomField::Url')
+      expect(result.map(&:value)).to include('https://github.com/bzf')
+    end
+  end
+
   context 'getting an unknown record' do
     it 'raises an Teamtailor::UnknownResponseTypeError' do
       payload = { 'id' => 3, 'type' => 'foo' }
