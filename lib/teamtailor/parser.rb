@@ -12,6 +12,7 @@ require 'teamtailor/parser/location'
 require 'teamtailor/parser/custom_field'
 require 'teamtailor/parser/custom_field_value'
 require 'teamtailor/parser/referral'
+require 'teamtailor/parser/partner_result'
 
 module Teamtailor
   class Parser
@@ -34,6 +35,7 @@ module Teamtailor
         when 'custom-fields' then Teamtailor::CustomField.new(record, included)
         when 'custom-field-values' then Teamtailor::CustomFieldValue.new(record, included)
         when 'referrals' then Teamtailor::Referral.new(record, included)
+        when 'partner-results' then Teamtailor::PartnerResult.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')

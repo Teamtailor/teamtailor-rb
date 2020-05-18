@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": "0cccae2c-e610-48a7-b6e4-a45f1d624f9a",
+      "type": "partner-results",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/partner-results/0cccae2c-e610-48a7-b6e4-a45f1d624f9a"
+      },
+      "attributes": {
+        "assessment-score": null,
+        "attachments": null,
+        "created-at": "2020-05-18T14:25:18.090+02:00",
+        "details": "{}",
+        "partner-name": "Partner 2",
+        "status": "completed",
+        "summary": null,
+        "url": null
+      },
+      "relationships": {
+        "candidate": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/partner-results/0cccae2c-e610-48a7-b6e4-a45f1d624f9a/relationships/candidate",
+            "related": "http://api.teamtailor.localhost/v1/partner-results/0cccae2c-e610-48a7-b6e4-a45f1d624f9a/candidate"
+          }
+        },
+        "job": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/partner-results/0cccae2c-e610-48a7-b6e4-a45f1d624f9a/relationships/job",
+            "related": "http://api.teamtailor.localhost/v1/partner-results/0cccae2c-e610-48a7-b6e4-a45f1d624f9a/job"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 1,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/partner-results?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.localhost/v1/partner-results?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
