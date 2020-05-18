@@ -199,6 +199,20 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context 'parsing referrals' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/referrals.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 1
+      expect(result.first.comment).to eq "Enthusiastic human being that deserves the job!"
+      expect(result.first.name).to eq "Jenn Doe"
+      expect(result.first.phone).to be_nil
+    end
+  end
+
   context 'getting an unknown record' do
     it 'raises an Teamtailor::UnknownResponseTypeError' do
       payload = { 'id' => 3, 'type' => 'foo' }

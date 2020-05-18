@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "4",
+      "type": "referrals",
+      "links": {
+        "self": "http://api.teamtailor.localhost/v1/referrals/4"
+      },
+      "attributes": {
+        "comment": "Enthusiastic human being that deserves the job!",
+        "created-at": "2020-05-18T09:56:07.256+02:00",
+        "email": null,
+        "name": "Jenn Doe",
+        "phone": null
+      },
+      "relationships": {
+        "candidate": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/referrals/4/relationships/candidate",
+            "related": "http://api.teamtailor.localhost/v1/referrals/4/candidate"
+          }
+        },
+        "department": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/referrals/4/relationships/department",
+            "related": "http://api.teamtailor.localhost/v1/referrals/4/department"
+          }
+        },
+        "job": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/referrals/4/relationships/job",
+            "related": "http://api.teamtailor.localhost/v1/referrals/4/job"
+          }
+        },
+        "role": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/referrals/4/relationships/role",
+            "related": "http://api.teamtailor.localhost/v1/referrals/4/role"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "http://api.teamtailor.localhost/v1/referrals/4/relationships/user",
+            "related": "http://api.teamtailor.localhost/v1/referrals/4/user"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 1,
+    "page-count": 1
+  },
+  "links": {
+    "first": "http://api.teamtailor.localhost/v1/referrals?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://api.teamtailor.localhost/v1/referrals?fields%5Bjobs%5D=title&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
