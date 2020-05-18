@@ -1,5 +1,8 @@
 ## Unreleased
 
+- Add `Teamtailor::CustomField` and `Teamtailor::CustomFieldValue`
+- Add `Client#custom_fields` and `Client#custom_field_values`
+
 ## v0.2.5 - 2020-05-15
 
 - Add `filters:` as an argument to `Client#jobs`
