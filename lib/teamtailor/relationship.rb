@@ -9,27 +9,29 @@ module Teamtailor
     end
 
     def loaded?
-      !record_id.nil?
+      !record_ids.empty?
     end
 
-    def record
+    def records
       raise Teamtailor::UnloadedRelationError unless loaded?
 
-      record_json = included.find do |k|
-        k['id'] == record_id && k['type'] == record_type
+      record_json = included.select do |k|
+        record_ids.include?(k['id']) && k['type'] == record_type
       end
 
-      Teamtailor::Parser.parse({ 'data' => record_json }).first
+      Teamtailor::Parser.parse({ 'data' => record_json })
     end
 
     private
 
-    def record_id
-      relationships&.dig(relation_name, 'data', 'id')
+    def record_ids
+      data = [relationships&.dig(relation_name, 'data')].flatten.compact
+      data.map { |row| row['id'] }
     end
 
     def record_type
-      relationships&.dig(relation_name, 'data', 'type')
+      data = [relationships&.dig(relation_name, 'data')].flatten
+      data.map { |row| row['type'] }.first
     end
 
     attr_reader :relation_name, :relationships, :included

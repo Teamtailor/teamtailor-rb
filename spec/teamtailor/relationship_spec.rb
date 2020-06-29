@@ -3,7 +3,7 @@
 require 'teamtailor/relationship'
 
 RSpec.describe Teamtailor::Relationship do
-  describe '#record' do
+  describe '#records' do
     context 'when not loaded' do
       subject { Teamtailor::Relationship.new('user') }
 
@@ -11,7 +11,7 @@ RSpec.describe Teamtailor::Relationship do
 
       it 'raises an Teamtailor::UnloadedRelationError' do
         expect do
-          subject.record
+          subject.records
         end.to raise_error Teamtailor::UnloadedRelationError
       end
     end
