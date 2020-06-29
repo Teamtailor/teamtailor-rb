@@ -2,6 +2,7 @@
 
 - [breaking] Update `Teamtailor::Relationship` to support returning multiple records
 - Add `Teamtailor::Requisition` and `Client#requisitions`
+- Add `Teamtailor::RequisitionStepVerdict`
 
 ## v0.2.6 - 2020-05-18
 

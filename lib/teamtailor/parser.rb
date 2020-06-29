@@ -14,6 +14,7 @@ require 'teamtailor/parser/custom_field_value'
 require 'teamtailor/parser/referral'
 require 'teamtailor/parser/partner_result'
 require 'teamtailor/parser/requisition'
+require 'teamtailor/parser/requisition_step_verdict'
 
 module Teamtailor
   class Parser
@@ -38,6 +39,7 @@ module Teamtailor
         when 'referrals' then Teamtailor::Referral.new(record, included)
         when 'partner-results' then Teamtailor::PartnerResult.new(record, included)
         when 'requisitions' then Teamtailor::Requisition.new(record, included)
+        when 'requisition-step-verdicts' then Teamtailor::RequisitionStepVerdict.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig('type')

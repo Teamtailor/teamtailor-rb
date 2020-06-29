@@ -73,8 +73,9 @@ RSpec.describe Teamtailor::Parser do
 
         expect(result.id).to eq 26
         expect(result.user).to be_loaded
-        expect(result.user.record.id).to eq 34
-        expect(result.user.record.login_email).to eq 'admin@teamtailor.localhost'
+        expect(result.user.records.size).to eq 1
+        expect(result.user.records.first.id).to eq 34
+        expect(result.user.records.first.login_email).to eq 'admin@teamtailor.localhost'
       end
     end
   end
@@ -241,6 +242,27 @@ RSpec.describe Teamtailor::Parser do
         "division" => "Europe",
         "comments" => "We should make sure that the applicant is familiar with the Go programming language"
       })
+    end
+
+    context "with included requisition-step-verdicts" do
+      it "works" do
+        payload = File.read 'spec/fixtures/v1/requisitions-with-verdicts.json'
+        json_payload = JSON.parse payload
+
+        result = Teamtailor::Parser.parse json_payload
+
+        expect(result.size).to eq 1
+        expect(result.first.job_title).to eq "Backend developer"
+        expect(result.first.job_description).to eq "We need someone to refactor our API endpoints"
+        expect(result.first.requisition_step_verdicts).to be_loaded
+
+        records = result.first.requisition_step_verdicts.records
+        expect(records.size).to eq 2
+        expect(records.find { |r| r.id == 1 }.status).to eq "approved"
+        expect(records.find { |r| r.id == 1 }.requisition_step_index).to eq 0
+        expect(records.find { |r| r.id == 2 }.status).to eq "pending"
+        expect(records.find { |r| r.id == 2 }.requisition_step_index).to eq 1
+      end
     end
   end
 

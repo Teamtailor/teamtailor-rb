@@ -1,0 +1,129 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "requisitions",
+      "links": {
+        "self": "https://api.teamtailor.com/v1/requisitions/1"
+      },
+      "attributes": {
+        "job-title": "Backend developer",
+        "job-description": "We need someone to refactor our API endpoints",
+        "country": "Sweden",
+        "min-salary": 123,
+        "max-salary": null,
+        "currency": null,
+        "salary-time-unit": "monthly",
+        "number-of-openings": 321,
+        "custom-form-answers": {},
+        "requisition-status": "pending",
+        "hired-count": 0,
+        "created-at": "2019-02-26T14:18:46.285-05:00"
+      },
+      "relationships": {
+        "location": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/location",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/location"
+          }
+        },
+        "department": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/department",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/department"
+          }
+        },
+        "role": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/role",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/role"
+          }
+        },
+        "recruiter": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/recruiter",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/recruiter"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/user",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/user"
+          }
+        },
+        "requisition-step-verdicts": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/requisition-step-verdicts",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/requisition-step-verdicts"
+          },
+          "data": [
+            {
+              "type": "requisition-step-verdicts",
+              "id": "2"
+            },
+            {
+              "type": "requisition-step-verdicts",
+              "id": "1"
+            }
+          ]
+        },
+        "jobs": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/jobs",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/jobs"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "2",
+      "type": "requisition-step-verdicts",
+      "links": {
+        "self": "https://api.teamtailor.com/v1/requisition-step-verdicts/2"
+      },
+      "attributes": {
+        "status": "pending",
+        "requisition-step-index": 1,
+        "updated-at": "2019-02-26T14:18:46.367-05:00"
+      },
+      "relationships": {
+        "user": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisition-step-verdicts/2/relationships/user",
+            "related": "https://api.teamtailor.com/v1/requisition-step-verdicts/2/user"
+          }
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "requisition-step-verdicts",
+      "links": {
+        "self": "https://api.teamtailor.com/v1/requisition-step-verdicts/1"
+      },
+      "attributes": {
+        "status": "approved",
+        "requisition-step-index": 0,
+        "updated-at": "2019-02-26T14:18:57.007-05:00"
+      },
+      "relationships": {
+        "user": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisition-step-verdicts/1/relationships/user",
+            "related": "https://api.teamtailor.com/v1/requisition-step-verdicts/1/user"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 9,
+    "page-count": 1
+  },
+  "links": {
+    "first": "https://api.teamtailor.com/v1/requisitions?include=requisition-step-verdicts&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "https://api.teamtailor.com/v1/requisitions?include=requisition-step-verdicts&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
