@@ -227,6 +227,23 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context 'parsing requisitions' do
+    it 'works' do
+      payload = File.read 'spec/fixtures/v1/requisitions.json'
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 1
+      expect(result.first.job_title).to eq "Backend developer"
+      expect(result.first.job_description).to eq "We need someone to refactor our API endpoints"
+      expect(result.first.custom_form_answers).to eq({
+        "division" => "Europe",
+        "comments" => "We should make sure that the applicant is familiar with the Go programming language"
+      })
+    end
+  end
+
   context 'getting an unknown record' do
     it 'raises an Teamtailor::UnknownResponseTypeError' do
       payload = { 'id' => 3, 'type' => 'foo' }

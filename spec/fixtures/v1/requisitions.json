@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "requisitions",
+      "links": {
+        "self": "https://api.teamtailor.com/v1/requisitions/1"
+      },
+      "attributes": {
+        "job-title": "Backend developer",
+        "job-description": "We need someone to refactor our API endpoints",
+        "country": "Sweden",
+        "min-salary": 30000,
+        "max-salary": 35000,
+        "currency": "SEK",
+        "salary-time-unit": "monthly",
+        "number-of-openings": 1,
+        "custom-form-answers": {
+          "division": "Europe",
+          "comments": "We should make sure that the applicant is familiar with the Go programming language"
+        },
+        "requisition-status": "pending"
+      },
+      "relationships": {
+        "location": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/location",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/location"
+          }
+        },
+        "department": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/department",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/department"
+          }
+        },
+        "role": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/role",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/role"
+          }
+        },
+        "recruiter": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/recruiter",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/recruiter"
+          }
+        },
+        "requisition-step-verdicts": {
+          "links": {
+            "self": "https://api.teamtailor.com/v1/requisitions/1/relationships/requisition-step-verdicts",
+            "related": "https://api.teamtailor.com/v1/requisitions/1/requisition-step-verdicts"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Add `Teamtailor::Requisition` and `Client#requisitions`
+
 ## v0.2.6 - 2020-05-18
 
 - Add `Teamtailor::PartnerResult` and `Client#partner_results`
