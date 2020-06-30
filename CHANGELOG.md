@@ -1,6 +1,8 @@
 ## Unreleased
 
-- [breaking] Update `Teamtailor::Relationship` to support returning multiple records
+## v0.3.0 - 2020-05-18
+
+- [BREAKING] Update `Teamtailor::Relationship` to always return multiple records
 - Add `Teamtailor::Requisition` and `Client#requisitions`
 - Add `Teamtailor::RequisitionStepVerdict`
 - Fix accessing nested relationships on `Relationship`
