@@ -1,0 +1,176 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "requisitions",
+      "links": {
+        "self": "https://api.teamtailor.localhost/v1/requisitions/1"
+      },
+      "attributes": {
+        "job-title": "my fancy schmancy requisition",
+        "job-description": "need more colleagues",
+        "country": "Sweden",
+        "min-salary": 123123,
+        "max-salary": null,
+        "currency": "SEK",
+        "salary-time-unit": "monthly",
+        "number-of-openings": 3,
+        "custom-form-answers": {
+          "division": "Asia"
+        },
+        "requisition-status": "pending",
+        "hired-count": 0,
+        "created-at": "2020-06-30T11:18:03.680+02:00"
+      },
+      "relationships": {
+        "location": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/location",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/location"
+          }
+        },
+        "department": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/department",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/department"
+          }
+        },
+        "role": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/role",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/role"
+          }
+        },
+        "recruiter": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/recruiter",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/recruiter"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/user",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/user"
+          }
+        },
+        "requisition-step-verdicts": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/requisition-step-verdicts",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/requisition-step-verdicts"
+          },
+          "data": [
+            {
+              "type": "requisition-step-verdicts",
+              "id": "1"
+            }
+          ]
+        },
+        "jobs": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisitions/1/relationships/jobs",
+            "related": "https://api.teamtailor.localhost/v1/requisitions/1/jobs"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "4",
+      "type": "users",
+      "links": {
+        "self": "https://api.teamtailor.localhost/v1/users/4"
+      },
+      "attributes": {
+        "description": null,
+        "external-id": null,
+        "facebook-profile": null,
+        "hide-email": false,
+        "instagram-profile": null,
+        "linkedin-profile": null,
+        "login-email": "admin@teamtailor.localhost",
+        "name": "Kulas4",
+        "notification-daily-digest": true,
+        "other-profile": null,
+        "phone": null,
+        "picture": {
+          "standard": null
+        },
+        "role": "admin",
+        "title": null,
+        "twitter-profile": null,
+        "username": "admin",
+        "visible": true,
+        "signature": "<p>-- <br>Kulas4<br>Teamtailor</p>",
+        "notification-job": true,
+        "notification-mention": true,
+        "notification-candidate-message": true,
+        "notification-lead-message": true,
+        "notification-connected-candidate": true,
+        "notification-hiring-team-application": false,
+        "notification-recruiter-application": true,
+        "notification-removal-request": true,
+        "notification-gdpr-digest": true,
+        "email": "admin@teamtailor.localhost"
+      },
+      "relationships": {
+        "department": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/users/4/relationships/department",
+            "related": "https://api.teamtailor.localhost/v1/users/4/department"
+          }
+        },
+        "location": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/users/4/relationships/location",
+            "related": "https://api.teamtailor.localhost/v1/users/4/location"
+          }
+        },
+        "jobs": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/users/4/relationships/jobs",
+            "related": "https://api.teamtailor.localhost/v1/users/4/jobs"
+          }
+        },
+        "teams": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/users/4/relationships/teams",
+            "related": "https://api.teamtailor.localhost/v1/users/4/teams"
+          }
+        }
+      }
+    },
+    {
+      "id": "1",
+      "type": "requisition-step-verdicts",
+      "links": {
+        "self": "https://api.teamtailor.localhost/v1/requisition-step-verdicts/1"
+      },
+      "attributes": {
+        "status": "pending",
+        "requisition-step-index": 0,
+        "updated-at": "2020-06-30T11:18:03.779+02:00"
+      },
+      "relationships": {
+        "user": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/requisition-step-verdicts/1/relationships/user",
+            "related": "https://api.teamtailor.localhost/v1/requisition-step-verdicts/1/user"
+          },
+          "data": {
+            "type": "users",
+            "id": "4"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 1,
+    "page-count": 1
+  },
+  "links": {
+    "first": "https://api.teamtailor.localhost/v1/requisitions?include=requisition-step-verdicts%2Crequisition-step-verdicts.user&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "https://api.teamtailor.localhost/v1/requisitions?include=requisition-step-verdicts%2Crequisition-step-verdicts.user&page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}

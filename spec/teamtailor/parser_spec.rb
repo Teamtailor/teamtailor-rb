@@ -263,6 +263,27 @@ RSpec.describe Teamtailor::Parser do
         expect(records.find { |r| r.id == 2 }.status).to eq "pending"
         expect(records.find { |r| r.id == 2 }.requisition_step_index).to eq 1
       end
+
+      context "with nested user" do
+        it "works" do
+          payload = File.read 'spec/fixtures/v1/requisition-with-step-verdicts-with-user.json'
+          json_payload = JSON.parse payload
+
+          result = Teamtailor::Parser.parse json_payload
+
+          expect(result.size).to eq 1
+          expect(result.first.requisition_step_verdicts).to be_loaded
+          records = result.first.requisition_step_verdicts.records
+          expect(records.size).to eq 1
+          expect(records.first.status).to eq "pending"
+
+          expect(records.first.user).to be_loaded
+          expect(records.first.user.records.size).to eq 1
+          user = records.first.user.records.first
+          expect(user.id).to eq 4
+          expect(user.login_email).to eq "admin@teamtailor.localhost"
+        end
+      end
     end
   end
 
