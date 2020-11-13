@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['hi@andreligne.se']
 
   spec.summary       = 'Library for interacting with the Teamtailor API'
-  spec.homepage      = 'https://github.com/bzf/teamtailor-gem'
+  spec.homepage      = 'https://github.com/teamtailor/teamtailor-gem'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
 
