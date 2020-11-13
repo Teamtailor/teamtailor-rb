@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/bzf/teamtailor-rb'
   spec.metadata['changelog_uri'] = 'https://github.com/bzf/teamtailor-rb/master/CHANGELOG.md'
 
+  spec.extra_rdoc_files = ['README.md']
+
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_dependency 'typhoeus', '~> 1.3.1'
 
