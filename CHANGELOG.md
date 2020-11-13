@@ -1,5 +1,9 @@
 ## Unreleased
 
+## v0.3.1 - 2020-11-13
+
+- Update metadata in the `teamtailor.gemspec`
+
 ## v0.3.0 - 2020-06-30
 
 - [BREAKING] Update `Teamtailor::Relationship` to always return multiple records
