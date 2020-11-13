@@ -117,7 +117,7 @@ git commits and tags, and push the `.gem` file to
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/bzf/teamtailor-rb.
+https://github.com/teamtailor/teamtailor-rb.
 
 
 ## License
