@@ -131,7 +131,7 @@ RSpec.describe Teamtailor::Request do
 
         expect do
           request.call
-        end.to(raise_error { Teamtailor::InvalidApiVersionError })
+        end.to(raise_error { Teamtailor::UnprocessableEntityError })
       end
     end
   end
