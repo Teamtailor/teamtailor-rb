@@ -1,5 +1,10 @@
 ## Unreleased
 
+## v0.3.2 - 2021-01-14
+
+- Added `Client#create_candidate`
+- Added `Client#create_job_application`
+
 ## v0.3.1 - 2020-11-13
 
 - Update metadata in the `teamtailor.gemspec`
