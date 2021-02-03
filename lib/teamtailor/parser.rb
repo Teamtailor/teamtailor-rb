@@ -35,6 +35,7 @@ module Teamtailor
         when 'departments' then Teamtailor::Department.new(record, included)
         when 'locations' then Teamtailor::Location.new(record, included)
         when 'custom-fields' then Teamtailor::CustomField.new(record, included)
+        when 'custom-field-selects' then Teamtailor::CustomField.new(record, included)
         when 'custom-field-values' then Teamtailor::CustomFieldValue.new(record, included)
         when 'referrals' then Teamtailor::Referral.new(record, included)
         when 'partner-results' then Teamtailor::PartnerResult.new(record, included)

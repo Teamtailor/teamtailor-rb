@@ -179,11 +179,11 @@ RSpec.describe Teamtailor::Parser do
 
       result = Teamtailor::Parser.parse json_payload
 
-      expect(result.size).to eq 2
-      expect(result.map(&:id)).to include(1, 2)
-      expect(result.map(&:name)).to include('Drivers license?', 'Github profile')
-      expect(result.map(&:api_name)).to include('drivers-license', 'github-profile')
-      expect(result.map(&:field_type)).to include('CustomField::Checkbox', 'CustomField::Url')
+      expect(result.size).to eq 3
+      expect(result.map(&:id)).to include(1, 2, 3)
+      expect(result.map(&:name)).to include('Drivers license?', 'Github profile', 'Favorite programming language')
+      expect(result.map(&:api_name)).to include('drivers-license', 'github-profile', 'favorite-programming-language')
+      expect(result.map(&:field_type)).to include('CustomField::Checkbox', 'CustomField::Url', 'CustomField::MultiSelect')
     end
   end
 
