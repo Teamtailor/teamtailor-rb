@@ -16,22 +16,22 @@ module Teamtailor
       raise Teamtailor::UnloadedRelationError unless loaded?
 
       record_json = included.select do |k|
-        record_ids.include?(k['id']) && k['type'] == record_type
+        record_ids.include?(k["id"]) && k["type"] == record_type
       end
 
-      Teamtailor::Parser.parse({ 'data' => record_json, 'included' => included })
+      Teamtailor::Parser.parse({ "data" => record_json, "included" => included })
     end
 
     private
 
     def record_ids
-      data = [relationships&.dig(relation_name, 'data')].flatten.compact
-      data.map { |row| row['id'] }
+      data = [relationships&.dig(relation_name, "data")].flatten.compact
+      data.map { |row| row["id"] }
     end
 
     def record_type
-      data = [relationships&.dig(relation_name, 'data')].flatten
-      data.map { |row| row['type'] }.first
+      data = [relationships&.dig(relation_name, "data")].flatten
+      data.map { |row| row["type"] }.first
     end
 
     attr_reader :relation_name, :relationships, :included

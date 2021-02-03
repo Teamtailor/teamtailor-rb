@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'teamtailor/record'
+require "teamtailor/record"
 
 module Teamtailor
   class Candidate < Record
     def connected?
-      data.dig('attributes', 'connected')
+      data.dig("attributes", "connected")
     end
   end
 end

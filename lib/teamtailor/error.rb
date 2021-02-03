@@ -9,7 +9,7 @@ module Teamtailor
       when 406
         json_response = JSON.parse(body)
         Teamtailor::InvalidApiVersionError.new(
-          json_response.dig('errors', 'detail')
+          json_response.dig("errors", "detail")
         )
       end
     end

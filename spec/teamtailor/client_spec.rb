@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'teamtailor/client'
+require "teamtailor/client"
 
 RSpec.describe Teamtailor::Client do
   describe "#jobs" do
@@ -12,19 +12,19 @@ RSpec.describe Teamtailor::Client do
           api_version: "123",
         )
 
-        stub_request(:get, 'http://api.teamtailor.localhost/v1/jobs')
+        stub_request(:get, "http://api.teamtailor.localhost/v1/jobs")
           .with(
             query: {
               'page[number]': 1,
               'page[size]': 30,
               'include': "",
-              'filter[status]': 'all',
+              'filter[status]': "all",
             }
           )
           .to_return(status: 200, body: {}.to_json)
 
         client.jobs filters: {
-          status: 'all',
+          status: "all",
         }
       end
     end
