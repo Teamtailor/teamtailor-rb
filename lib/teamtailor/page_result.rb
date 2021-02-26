@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'teamtailor/parser'
+require "teamtailor/parser"
 
 module Teamtailor
   class PageResult
@@ -13,27 +13,27 @@ module Teamtailor
     end
 
     def data
-      json_response.dig('data')
+      json_response.dig("data")
     end
 
     def page_count
-      json_response.dig('meta', 'page-count')
+      json_response.dig("meta", "page-count")
     end
 
     def record_count
-      json_response.dig('meta', 'record-count')
+      json_response.dig("meta", "record-count")
     end
 
     def next_page_url
-      json_response.dig('links', 'next')
+      json_response.dig("links", "next")
     end
 
     def first_page_url
-      json_response.dig('links', 'first')
+      json_response.dig("links", "first")
     end
 
     def last_page_url
-      json_response.dig('links', 'last')
+      json_response.dig("links", "last")
     end
 
     def has_next_page?

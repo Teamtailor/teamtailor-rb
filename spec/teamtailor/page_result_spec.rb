@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'teamtailor/page_result'
+require "teamtailor/page_result"
 
 RSpec.describe Teamtailor::PageResult do
-  context 'when getting a single response back' do
+  context "when getting a single response back" do
     let(:page_result) do
-      @response = File.read 'spec/fixtures/v1/candidates.json'
+      @response = File.read "spec/fixtures/v1/candidates.json"
       Teamtailor::PageResult.new @response
     end
 
@@ -15,24 +15,24 @@ RSpec.describe Teamtailor::PageResult do
 
     it do
       expect(page_result.first_page_url).to eq(
-        'http://api.teamtailor.localhost/v1/candidates?page%5Bnumber%5D=1&page%5Bsize%5D=10'
+        "http://api.teamtailor.localhost/v1/candidates?page%5Bnumber%5D=1&page%5Bsize%5D=10"
       )
     end
 
     it do
       expect(page_result.last_page_url).to eq(
-        'http://api.teamtailor.localhost/v1/candidates?page%5Bnumber%5D=41&page%5Bsize%5D=10'
+        "http://api.teamtailor.localhost/v1/candidates?page%5Bnumber%5D=41&page%5Bsize%5D=10"
       )
     end
 
-    describe '#data' do
-      it 'returns an the data attribute of the response' do
-        expect(page_result.data).to eq JSON.parse(@response).dig('data')
+    describe "#data" do
+      it "returns an the data attribute of the response" do
+        expect(page_result.data).to eq JSON.parse(@response).dig("data")
       end
     end
 
-    describe '#records' do
-      it 'returns an array of parsed records' do
+    describe "#records" do
+      it "returns an array of parsed records" do
         expect(Teamtailor::Parser).to receive(:parse).and_call_original
 
         result = page_result.records
@@ -43,18 +43,18 @@ RSpec.describe Teamtailor::PageResult do
     end
   end
 
-  context 'getting an invalid JSON response' do
-    it 'raises an Teamtailor::JSONError' do
+  context "getting an invalid JSON response" do
+    it "raises an Teamtailor::JSONError" do
       expect do
-        Teamtailor::PageResult.new 'totally-not-json'
+        Teamtailor::PageResult.new "totally-not-json"
       end.to(raise_error { Teamtailor::JSONError })
     end
   end
 
-  describe '#has_next_page?' do
-    it 'works' do
+  describe "#has_next_page?" do
+    it "works" do
       result = Teamtailor::PageResult.new({
-        links: { next: 'some-url' }
+        links: { next: "some-url" },
       }.to_json)
       expect(result.has_next_page?).to eq true
 

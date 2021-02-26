@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'teamtailor/request'
+require "teamtailor/request"
 
 module Teamtailor
   class Client
@@ -15,9 +15,9 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/company',
+        path: "/v1/company",
         params: {
-          'include' => include.join(',')
+          "include" => include.join(","),
         }
       ).call
     end
@@ -27,11 +27,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/candidates',
+        path: "/v1/candidates",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -61,11 +61,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/jobs',
+        path: "/v1/jobs",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(','),
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }.merge(*filter_params)
       ).call
     end
@@ -75,11 +75,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/job-applications',
+        path: "/v1/job-applications",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -106,11 +106,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/users',
+        path: "/v1/users",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -120,11 +120,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/stages',
+        path: "/v1/stages",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -134,11 +134,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/reject-reasons',
+        path: "/v1/reject-reasons",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -148,11 +148,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/departments',
+        path: "/v1/departments",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -162,11 +162,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/locations',
+        path: "/v1/locations",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -176,11 +176,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/custom-fields',
+        path: "/v1/custom-fields",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -190,11 +190,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/custom-field-values',
+        path: "/v1/custom-field-values",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -204,11 +204,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/referrals',
+        path: "/v1/referrals",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -218,11 +218,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/partner-results',
+        path: "/v1/partner-results",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end
@@ -232,11 +232,11 @@ module Teamtailor
         base_url: base_url,
         api_token: api_token,
         api_version: api_version,
-        path: '/v1/requisitions',
+        path: "/v1/requisitions",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(',')
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
         }
       ).call
     end

@@ -43,10 +43,32 @@
           }
         }
       }
+    },
+    {
+      "id": "3",
+      "type": "custom-field-selects",
+      "links": {
+        "self": "https://api.teamtailor.localhost/v1/custom-fields/3"
+      },
+      "attributes": {
+        "api-name": "favorite-programming-language",
+        "name": "Favorite programming language",
+        "field-type": "CustomField::MultiSelect",
+        "created-at": "2021-02-03T15:44:31.416+01:00",
+        "updated-at": "2021-02-03T15:44:31.416+01:00"
+      },
+      "relationships": {
+        "custom-field-values": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/custom-fields/8/relationships/custom-field-values",
+            "related": "https://api.teamtailor.localhost/v1/custom-fields/8/custom-field-values"
+          }
+        }
+      }
     }
   ],
   "meta": {
-    "record-count": 2,
+    "record-count": 3,
     "page-count": 1
   },
   "links": {

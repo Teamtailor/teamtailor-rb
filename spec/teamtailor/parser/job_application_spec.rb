@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'teamtailor/parser/job_application'
+require "teamtailor/parser/job_application"
 
 RSpec.describe Teamtailor::JobApplication do
-  describe 'serializing and deserializing' do
-    context 'with included relationships' do
-      it 'works' do
-        payload = File.read 'spec/fixtures/v1/job_application_included_candidate_job.json'
+  describe "serializing and deserializing" do
+    context "with included relationships" do
+      it "works" do
+        payload = File.read "spec/fixtures/v1/job_application_included_candidate_job.json"
         json_payload = JSON.parse payload
 
         job_application = Teamtailor::JobApplication.new(
-          json_payload.dig('data'),
-          json_payload.dig('included')
+          json_payload.dig("data"),
+          json_payload.dig("included")
         )
         expect(job_application.candidate).to be_loaded
         expect(job_application.candidate.records.first.id).to eq 410
