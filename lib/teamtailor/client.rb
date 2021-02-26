@@ -97,8 +97,7 @@ module Teamtailor
                   relationships: relationships,
               },
           }
-      )
-
+      ).call
     end
 
     def create_job_application(candidate_id:, job_id:, **args)
