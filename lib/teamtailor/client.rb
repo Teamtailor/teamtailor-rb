@@ -94,7 +94,7 @@ module Teamtailor
           body: {
               data: {
                   type: "job-applications",
-                  attributes: attributes.transform_keys{ |k| k.to_s.gsub("_", "-") },
+                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
                   relationships: relationships,
               },
           }
