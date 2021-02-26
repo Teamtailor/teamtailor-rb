@@ -36,7 +36,7 @@ module Teamtailor
       ).call
     end
 
-    def create_candidate(**args)
+    def create_candidate(attributes:)
       Teamtailor::Request.new(
           base_url: base_url,
           api_token: api_token,
@@ -46,7 +46,7 @@ module Teamtailor
           body: {
               data: {
                   type: "candidates",
-                  attributes: args.transform_keys{ |k| k.to_s.gsub("_", "-") }
+                  attributes: attributes.transform_keys{ |k| k.to_s.gsub("_", "-") }
               }
           }
       ).call
@@ -84,7 +84,7 @@ module Teamtailor
       ).call
     end
 
-    def create_job_application(candidate_id:, job_id:, **args)
+    def create_job_application(attributes:, relationships:)
       Teamtailor::Request.new(
           base_url: base_url,
           api_token: api_token,
@@ -94,21 +94,8 @@ module Teamtailor
           body: {
               data: {
                   type: "job-applications",
-                  attributes: args.transform_keys{ |k| k.to_s.gsub("_", "-") },
-                  relationships: {
-                      candidate: {
-                          data: {
-                              id: candidate_id,
-                              type: "candidates"
-                          }
-                      },
-                      job: {
-                          data: {
-                              id: job_id,
-                              type: "jobs"
-                          }
-                      }
-                  }
+                  attributes: attributes.transform_keys{ |k| k.to_s.gsub("_", "-") },
+                  relationships: relationships
               }
           }
       ).call
