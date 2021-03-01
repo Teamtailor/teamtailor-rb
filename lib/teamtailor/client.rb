@@ -36,7 +36,7 @@ module Teamtailor
       ).call
     end
 
-    def create_candidate(attributes:)
+    def create_candidate(attributes:, relationships:)
       Teamtailor::Request.new(
           base_url: base_url,
           api_token: api_token,
@@ -47,6 +47,7 @@ module Teamtailor
               data: {
                   type: "candidates",
                   attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
+                  relationships: relationships,
               },
           }
       ).call
