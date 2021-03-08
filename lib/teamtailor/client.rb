@@ -37,7 +37,7 @@ module Teamtailor
     end
 
     def jobs(page: 1, include: [], filters: {})
-      filter_params = filters.transform_keys{ |key| "filter[#{key}]" }
+      filter_params = filters.transform_keys { |key| "filter[#{key}]" }
 
       Teamtailor::Request.new(
         base_url: base_url,
