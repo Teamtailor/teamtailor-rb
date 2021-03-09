@@ -11,6 +11,11 @@ module Teamtailor
         Teamtailor::InvalidApiVersionError.new(
           json_response.dig("errors", "detail")
         )
+      when 422
+        json_response = JSON.parse(body)
+        Teamtailor::UnprocessableEntityError.new(
+            json_response.dig("errors", 0, "detail")
+        )
       end
     end
   end
@@ -26,4 +31,6 @@ module Teamtailor
   class UnknownResponseTypeError < ClientError; end
 
   class UnloadedRelationError < ClientError; end
+
+  class UnprocessableEntityError < ClientError; end
 end

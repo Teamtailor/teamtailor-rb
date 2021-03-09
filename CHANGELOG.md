@@ -1,4 +1,6 @@
 ## Unreleased
+- Added `Client#create_candidate`
+- Added `Client#create_job_application`
 
 ## v0.3.2 - 2021-02-03
 
