@@ -107,5 +107,32 @@ RSpec.describe Teamtailor::Request do
         end.to(raise_error { Teamtailor::InvalidApiVersionError })
       end
     end
+
+    context "getting a 422 response" do
+      it "raises an Teamtailor::UnprocessableEntityError" do
+        api_token = SecureRandom.uuid
+        request = Teamtailor::Request.new(
+            base_url: "http://api.teamtailor.localhost",
+            api_token: api_token,
+            api_version: 20_161_108,
+            path: "/v1/candidates",
+            method: :post,
+            body: {
+                data: {
+                    type: "candidates",
+                    attributes: { first_name: "Foo", last_name: "Bar", email: nil },
+                },
+            }
+        )
+
+        stub_request(:post, "http://api.teamtailor.localhost/v1/candidates")
+            .to_return(status: 422, body:
+                '{"errors":[{"title":"can\'t be blank","detail":"email - can\'t be blank","code":"100","source":{"pointer":"/data/attributes/email"},"status":"422"}]}')
+
+        expect do
+          request.call
+        end.to(raise_error { Teamtailor::UnprocessableEntityError })
+      end
+    end
   end
 end

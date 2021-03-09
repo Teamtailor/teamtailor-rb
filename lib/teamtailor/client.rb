@@ -36,6 +36,23 @@ module Teamtailor
       ).call
     end
 
+    def create_candidate(attributes:, relationships:)
+      Teamtailor::Request.new(
+          base_url: base_url,
+          api_token: api_token,
+          api_version: api_version,
+          path: "/v1/candidates",
+          method: :post,
+          body: {
+              data: {
+                  type: "candidates",
+                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
+                  relationships: relationships,
+              },
+          }
+      ).call
+    end
+
     def jobs(page: 1, include: [], filters: {})
       filter_params = filters.transform_keys { |key| "filter[#{key}]" }
 
@@ -63,6 +80,23 @@ module Teamtailor
           "page[size]" => 30,
           "include" => include.join(","),
         }
+      ).call
+    end
+
+    def create_job_application(attributes:, relationships:)
+      Teamtailor::Request.new(
+          base_url: base_url,
+          api_token: api_token,
+          api_version: api_version,
+          path: "/v1/job-applications",
+          method: :post,
+          body: {
+              data: {
+                  type: "job-applications",
+                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
+                  relationships: relationships,
+              },
+          }
       ).call
     end
 
