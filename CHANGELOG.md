@@ -1,4 +1,5 @@
 ## Unreleased
+- Fix accessing `Client#jobs` without filters
 
 ## v0.3.2 - 2021-02-03
 
