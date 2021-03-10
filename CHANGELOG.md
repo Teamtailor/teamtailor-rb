@@ -1,4 +1,7 @@
 ## Unreleased
+
+## v0.3.3 - 2021-03-10
+
 - Added `Client#create_candidate`
 - Added `Client#create_job_application`
 - Fix accessing `Client#jobs` without filters
