@@ -15,7 +15,7 @@ require "teamtailor/parser/referral"
 require "teamtailor/parser/partner_result"
 require "teamtailor/parser/requisition"
 require "teamtailor/parser/requisition_step_verdict"
-require 'teamtailor/parser/upload'
+require "teamtailor/parser/upload"
 
 module Teamtailor
   class Parser
