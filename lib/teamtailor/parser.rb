@@ -42,7 +42,7 @@ module Teamtailor
         when "partner-results" then Teamtailor::PartnerResult.new(record, included)
         when "requisitions" then Teamtailor::Requisition.new(record, included)
         when "requisition-step-verdicts" then Teamtailor::RequisitionStepVerdict.new(record, included)
-        when 'uploads' then Teamtailor::Upload.new(record, included)
+        when "uploads" then Teamtailor::Upload.new(record, included)
 
         else
           raise Teamtailor::UnknownResponseTypeError, record&.dig("type")
