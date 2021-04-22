@@ -93,7 +93,7 @@ module Teamtailor
           body: {
               data: {
                   type: "uploads",
-                  attributes: attributes.transform_keys{ |k| k.to_s.gsub("_", "-") },
+                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
                   relationships: relationships,
               },
           }
