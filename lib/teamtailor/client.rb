@@ -83,6 +83,23 @@ module Teamtailor
       ).call
     end
 
+    def create_upload(attributes:, relationships:)
+      Teamtailor::Request.new(
+          base_url: base_url,
+          api_token: api_token,
+          api_version: api_version,
+          path: "/v1/uploads",
+          method: :post,
+          body: {
+              data: {
+                  type: "uploads",
+                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
+                  relationships: relationships,
+              },
+          }
+      ).call
+    end
+
     def create_job_application(attributes:, relationships:)
       Teamtailor::Request.new(
           base_url: base_url,

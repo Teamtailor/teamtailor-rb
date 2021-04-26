@@ -287,6 +287,20 @@ RSpec.describe Teamtailor::Parser do
     end
   end
 
+  context "parsing upload" do
+    it "works" do
+      payload = File.read "spec/fixtures/v1/upload.json"
+      json_payload = JSON.parse payload
+
+      result = Teamtailor::Parser.parse json_payload
+
+      expect(result.size).to eq 1
+      expect(result.first.file_name).to eq "resume.pdf"
+      expect(result.first.internal).to eq false
+      expect(result.first.url).to eq "https://bucket-name.s3.eu-west-1.amazonaws.com/uploads/5d50ed1119b303291941e65fb3de88df31a02581"
+    end
+  end
+
   context "getting an unknown record" do
     it "raises an Teamtailor::UnknownResponseTypeError" do
       payload = { "id" => 3, "type" => "foo" }

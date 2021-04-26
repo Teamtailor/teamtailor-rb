@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "uploads",
+      "links": {
+        "self": "https://api.teamtailor.localhost/v1/uploads/1"
+      },
+      "attributes": {
+        "url": "https://bucket-name.s3.eu-west-1.amazonaws.com/uploads/5d50ed1119b303291941e65fb3de88df31a02581",
+        "file-name": "resume.pdf",
+        "internal": false
+      },
+      "relationships": {
+        "candidate": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/uploads/1/relationships/candidate",
+            "related": "https://api.teamtailor.localhost/v1/uploads/1/candidate"
+          }
+        },
+        "job": {
+          "links": {
+            "self": "https://api.teamtailor.localhost/v1/uploads/1/relationships/job",
+            "related": "https://api.teamtailor.localhost/v1/uploads/1/job"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "record-count": 1,
+    "page-count": 1
+  },
+  "links": {
+    "first": "https://api.teamtailor.localhost/v1/uploads?page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "https://api.teamtailor.localhost/v1/uploads?page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  }
+}
