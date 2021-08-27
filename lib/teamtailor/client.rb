@@ -62,10 +62,10 @@ module Teamtailor
         api_version: api_version,
         path: "/v1/jobs",
         params: {
-          'page[number]' => page,
-          'page[size]' => 30,
-          'include' => include.join(','),
-        }#.merge(*filter_params)
+          "page[number]" => page,
+          "page[size]" => 30,
+          "include" => include.join(","),
+        }.merge(filter_params)
       ).call
     end
 
@@ -100,7 +100,7 @@ module Teamtailor
       ).call
     end
 
-    def create_job_application(candidate_id:, job_id:, **args)
+    def create_job_application(attributes:, relationships:)
       Teamtailor::Request.new(
           base_url: base_url,
           api_token: api_token,
