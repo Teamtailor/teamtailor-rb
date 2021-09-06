@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Added `Client#create_upload`
+
 ## v0.3.3 - 2021-03-10
 
 - Added `Client#create_candidate`
