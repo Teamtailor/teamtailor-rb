@@ -1,5 +1,7 @@
 ## Unreleased
 
+## v0.4.0 - 2021-09-06
+
 - Added `Client#create_upload`
 
 ## v0.3.3 - 2021-03-10
