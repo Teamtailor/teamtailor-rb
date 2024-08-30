@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files = ["README.md"]
 
   spec.add_development_dependency "rspec", "~> 3.2"
-  spec.add_dependency "typhoeus", "~> 1.3.1"
+  spec.add_dependency "typhoeus", "~> 1.4.0"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added
