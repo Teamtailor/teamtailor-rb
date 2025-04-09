@@ -5,17 +5,17 @@ require_relative "lib/teamtailor/version"
 Gem::Specification.new do |spec|
   spec.name          = "teamtailor"
   spec.version       = Teamtailor::VERSION
-  spec.authors       = ["André Ligné"]
-  spec.email         = ["hi@andreligne.se"]
+  spec.authors       = ["André Ligné", "Jonas Brusman"]
+  spec.email         = ["andre@teamtailor.com", "jonas@teamtailor.com"]
 
   spec.summary       = "Library for interacting with the Teamtailor API"
-  spec.homepage      = "https://github.com/teamtailor/teamtailor-gem"
+  spec.homepage      = "https://github.com/Teamtailor/teamtailor-rb"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/bzf/teamtailor-rb"
-  spec.metadata["changelog_uri"] = "https://github.com/bzf/teamtailor-rb/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/Teamtailor/teamtailor-rb"
+  spec.metadata["changelog_uri"] = "https://github.com/Teamtailor/teamtailor-rb/main/CHANGELOG.md"
 
   spec.extra_rdoc_files = ["README.md"]
 
