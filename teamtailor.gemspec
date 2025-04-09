@@ -3,14 +3,14 @@
 require_relative "lib/teamtailor/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "teamtailor"
-  spec.version       = Teamtailor::VERSION
-  spec.authors       = ["André Ligné", "Jonas Brusman"]
-  spec.email         = ["andre@teamtailor.com", "jonas@teamtailor.com"]
+  spec.name = "teamtailor"
+  spec.version = Teamtailor::VERSION
+  spec.authors = ["André Ligné", "Jonas Brusman"]
+  spec.email = ["andre@teamtailor.com", "jonas@teamtailor.com"]
 
-  spec.summary       = "Library for interacting with the Teamtailor API"
-  spec.homepage      = "https://github.com/Teamtailor/teamtailor-rb"
-  spec.license       = "MIT"
+  spec.summary = "Library for interacting with the Teamtailor API"
+  spec.homepage = "https://github.com/Teamtailor/teamtailor-rb"
+  spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
       f.match(%r{^(test|spec|features)/})
     end
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 end

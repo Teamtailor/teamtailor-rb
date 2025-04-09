@@ -16,7 +16,7 @@ RSpec.describe Teamtailor::Record do
     it "responds to attribute names" do
       record = Teamtailor::Record.new(
         "attributes" => {
-          "name" => "Eminem",
+          "name" => "Eminem"
         }
       )
 
@@ -24,7 +24,7 @@ RSpec.describe Teamtailor::Record do
     end
 
     it "responds to underscore versions of a attribute" do
-      record = Teamtailor::Record.new("attributes" => { "first-name" => "Frej" })
+      record = Teamtailor::Record.new("attributes" => {"first-name" => "Frej"})
 
       expect(record.first_name).to eq "Frej"
     end
@@ -46,7 +46,7 @@ RSpec.describe Teamtailor::Record do
 
   describe "non-loaded relationships" do
     it "returns unloaded relations" do
-      record = Teamtailor::Record.new("relationships" => { "user" => {} })
+      record = Teamtailor::Record.new("relationships" => {"user" => {}})
 
       relation = record.user
       expect(relation).not_to be_loaded
@@ -59,25 +59,25 @@ RSpec.describe Teamtailor::Record do
       record = Teamtailor::Record.new(
         {
           "attributes" => {
-            "value" => 42,
+            "value" => 42
           },
           "relationships" => {
             "user" => {
               "data" => {
                 "id" => user_id,
-                "type" => "users",
-              },
-            },
-          },
+                "type" => "users"
+              }
+            }
+          }
         },
         [
           {
             "id" => user_id,
             "type" => "users",
             "attributes" => {
-              "name" => "Marshall Mathers",
-            },
-          },
+              "name" => "Marshall Mathers"
+            }
+          }
         ]
       )
 

@@ -43,10 +43,10 @@ module Teamtailor
 
     def request_headers
       {
-        "Authorization": "Token token=#{api_token}",
+        :Authorization => "Token token=#{api_token}",
         "X-Api-Version" => api_version,
         "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-        "Content-Type" => "application/vnd.api+json",
+        "Content-Type" => "application/vnd.api+json"
       }
     end
   end

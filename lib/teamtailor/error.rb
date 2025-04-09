@@ -24,11 +24,9 @@ module Teamtailor
     end
 
     def self.parse_body(body)
-      begin
-        JSON.parse(body)
-      rescue JSON::ParserError => e
-        {}
-      end
+      JSON.parse(body)
+    rescue JSON::ParserError
+      {}
     end
   end
 

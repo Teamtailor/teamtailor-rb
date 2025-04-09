@@ -18,19 +18,19 @@ RSpec.describe Teamtailor::Request do
       stub_request(:get, "http://api.teamtailor.localhost/v1/nonsense")
         .with(
           headers: {
-            "Authorization": "Token token=#{api_token}",
+            :Authorization => "Token token=#{api_token}",
             "X-Api-Version" => 20_161_108,
             "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-            "Content-Type" => "application/vnd.api+json",
+            "Content-Type" => "application/vnd.api+json"
           }
         )
-        .to_return(status: 200, body: { nonsense: true }.to_json, headers: {
-                     "X-Api-Version" => 20_161_108,
-                     "X-Rate-Limit-Limit" => 100,
-                     "X-Rate-Limit-Remaining" => 100,
-                     "X-Rate-Limit-Reset" => 1,
-                     "Content-Type" => "application/vnd.api+json",
-                   })
+        .to_return(status: 200, body: {nonsense: true}.to_json, headers: {
+          "X-Api-Version" => 20_161_108,
+          "X-Rate-Limit-Limit" => 100,
+          "X-Rate-Limit-Remaining" => 100,
+          "X-Rate-Limit-Reset" => 1,
+          "Content-Type" => "application/vnd.api+json"
+        })
 
       page_result = request.call
       expect(page_result.class).to eq Teamtailor::PageResult
@@ -45,14 +45,14 @@ RSpec.describe Teamtailor::Request do
           api_version: 20_161_108,
           path: "/v1/nonsense",
           params: {
-            'page[size]': 3,
+            "page[size]": 3
           }
         )
 
         stub_request(:get, "http://api.teamtailor.localhost/v1/nonsense")
           .with(
             query: {
-              'page[size]': 3,
+              "page[size]": 3
             }
           )
           .to_return(status: 200, body: {}.to_json)
@@ -74,10 +74,10 @@ RSpec.describe Teamtailor::Request do
         stub_request(:get, "http://api.teamtailor.localhost/v1/candidates")
           .with(
             headers: {
-              "Authorization": "Token token=#{api_token}",
+              :Authorization => "Token token=#{api_token}",
               "X-Api-Version" => 20_161_108,
               "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-              "Content-Type" => "application/vnd.api+json",
+              "Content-Type" => "application/vnd.api+json"
             }
           )
           .to_return(status: 401, body: "")
@@ -112,21 +112,21 @@ RSpec.describe Teamtailor::Request do
       it "raises an Teamtailor::UnprocessableEntityError" do
         api_token = SecureRandom.uuid
         request = Teamtailor::Request.new(
-            base_url: "http://api.teamtailor.localhost",
-            api_token: api_token,
-            api_version: 20_161_108,
-            path: "/v1/candidates",
-            method: :post,
-            body: {
-                data: {
-                    type: "candidates",
-                    attributes: { first_name: "Foo", last_name: "Bar", email: nil },
-                },
+          base_url: "http://api.teamtailor.localhost",
+          api_token: api_token,
+          api_version: 20_161_108,
+          path: "/v1/candidates",
+          method: :post,
+          body: {
+            data: {
+              type: "candidates",
+              attributes: {first_name: "Foo", last_name: "Bar", email: nil}
             }
+          }
         )
 
         stub_request(:post, "http://api.teamtailor.localhost/v1/candidates")
-            .to_return(status: 422, body:
+          .to_return(status: 422, body:
                 '{"errors":[{"title":"can\'t be blank","detail":"email - can\'t be blank","code":"100","source":{"pointer":"/data/attributes/email"},"status":"422"}]}')
 
         expect do

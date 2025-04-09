@@ -240,7 +240,7 @@ RSpec.describe Teamtailor::Parser do
       expect(result.first.job_description).to eq "We need someone to refactor our API endpoints"
       expect(result.first.custom_form_answers).to eq({
         "division" => "Europe",
-        "comments" => "We should make sure that the applicant is familiar with the Go programming language",
+        "comments" => "We should make sure that the applicant is familiar with the Go programming language"
       })
     end
 
@@ -303,10 +303,10 @@ RSpec.describe Teamtailor::Parser do
 
   context "getting an unknown record" do
     it "raises an Teamtailor::UnknownResponseTypeError" do
-      payload = { "id" => 3, "type" => "foo" }
+      payload = {"id" => 3, "type" => "foo"}
 
       expect do
-        Teamtailor::Parser.parse({ "data" => payload })
+        Teamtailor::Parser.parse({"data" => payload})
       end.to raise_error Teamtailor::UnknownResponseTypeError
     end
   end

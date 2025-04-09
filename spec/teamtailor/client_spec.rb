@@ -9,22 +9,22 @@ RSpec.describe Teamtailor::Client do
         client = Teamtailor::Client.new(
           base_url: "http://api.teamtailor.localhost",
           api_token: "foobar",
-          api_version: "123",
+          api_version: "123"
         )
 
         stub_request(:get, "http://api.teamtailor.localhost/v1/jobs")
           .with(
             query: {
-              'page[number]': 1,
-              'page[size]': 30,
-              'include': "",
-              'filter[status]': "all",
+              "page[number]": 1,
+              "page[size]": 30,
+              include: "",
+              "filter[status]": "all"
             }
           )
           .to_return(status: 200, body: {}.to_json)
 
         client.jobs filters: {
-          status: "all",
+          status: "all"
         }
       end
     end
@@ -32,20 +32,20 @@ RSpec.describe Teamtailor::Client do
     context "passing request without filters" do
       it "passes an empty filter list along in the request" do
         client = Teamtailor::Client.new(
-            base_url: "http://api.teamtailor.localhost",
-            api_token: "foobar",
-            api_version: "123",
-          )
+          base_url: "http://api.teamtailor.localhost",
+          api_token: "foobar",
+          api_version: "123"
+        )
 
         stub_request(:get, "http://api.teamtailor.localhost/v1/jobs")
-            .with(
-                query: {
-                    'page[number]': 1,
-                    'page[size]': 30,
-                    'include': "",
-                }
-            )
-            .to_return(status: 200, body: {}.to_json)
+          .with(
+            query: {
+              "page[number]": 1,
+              "page[size]": 30,
+              include: ""
+            }
+          )
+          .to_return(status: 200, body: {}.to_json)
 
         client.jobs
       end
