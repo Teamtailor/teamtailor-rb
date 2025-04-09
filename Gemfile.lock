@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    teamtailor (0.4.0)
+    teamtailor (0.4.1)
       typhoeus (~> 1.4.0)
 
 GEM
