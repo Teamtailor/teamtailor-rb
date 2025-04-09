@@ -15,18 +15,22 @@ module Teamtailor
     def serialize
       {
         data: data,
-        included: included,
+        included: included
       }.to_json
     end
 
     def method_missing(m)
       if m == :id
         data.dig("id").to_i
-      elsif relationship_keys.include?(m.to_s.gsub("_", "-"))
-        build_relationship(m.to_s.gsub("_", "-"))
+      elsif relationship_keys.include?(m.to_s.tr("_", "-"))
+        build_relationship(m.to_s.tr("_", "-"))
       else
-        data.dig("attributes", m.to_s.gsub("_", "-"))
+        data.dig("attributes", m.to_s.tr("_", "-"))
       end
+    end
+
+    def respond_to_missing?(m, include_private = false)
+      m == :id || relationship_keys.include?(m.to_s.tr("_", "-")) || data.dig("attributes")&.key?(m.to_s.tr("_", "-")) || super
     end
 
     private

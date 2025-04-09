@@ -17,7 +17,7 @@ module Teamtailor
         api_version: api_version,
         path: "/v1/company",
         params: {
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -31,25 +31,25 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
 
     def create_candidate(attributes:, relationships:)
       Teamtailor::Request.new(
-          base_url: base_url,
-          api_token: api_token,
-          api_version: api_version,
-          path: "/v1/candidates",
-          method: :post,
-          body: {
-              data: {
-                  type: "candidates",
-                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
-                  relationships: relationships,
-              },
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: "/v1/candidates",
+        method: :post,
+        body: {
+          data: {
+            type: "candidates",
+            attributes: attributes.transform_keys { |k| k.to_s.tr("_", "-") },
+            relationships: relationships
           }
+        }
       ).call
     end
 
@@ -64,7 +64,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }.merge(filter_params)
       ).call
     end
@@ -78,42 +78,42 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
 
     def create_upload(attributes:, relationships:)
       Teamtailor::Request.new(
-          base_url: base_url,
-          api_token: api_token,
-          api_version: api_version,
-          path: "/v1/uploads",
-          method: :post,
-          body: {
-              data: {
-                  type: "uploads",
-                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
-                  relationships: relationships,
-              },
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: "/v1/uploads",
+        method: :post,
+        body: {
+          data: {
+            type: "uploads",
+            attributes: attributes.transform_keys { |k| k.to_s.tr("_", "-") },
+            relationships: relationships
           }
+        }
       ).call
     end
 
     def create_job_application(attributes:, relationships:)
       Teamtailor::Request.new(
-          base_url: base_url,
-          api_token: api_token,
-          api_version: api_version,
-          path: "/v1/job-applications",
-          method: :post,
-          body: {
-              data: {
-                  type: "job-applications",
-                  attributes: attributes.transform_keys { |k| k.to_s.gsub("_", "-") },
-                  relationships: relationships,
-              },
+        base_url: base_url,
+        api_token: api_token,
+        api_version: api_version,
+        path: "/v1/job-applications",
+        method: :post,
+        body: {
+          data: {
+            type: "job-applications",
+            attributes: attributes.transform_keys { |k| k.to_s.tr("_", "-") },
+            relationships: relationships
           }
+        }
       ).call
     end
 
@@ -126,7 +126,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -140,7 +140,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -154,7 +154,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -168,7 +168,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -182,7 +182,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -196,7 +196,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -210,7 +210,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -224,7 +224,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -238,7 +238,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end
@@ -252,7 +252,7 @@ module Teamtailor
         params: {
           "page[number]" => page,
           "page[size]" => 30,
-          "include" => include.join(","),
+          "include" => include.join(",")
         }
       ).call
     end

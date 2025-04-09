@@ -19,7 +19,7 @@ module Teamtailor
         record_ids.include?(k["id"]) && k["type"] == record_type
       end
 
-      Teamtailor::Parser.parse({ "data" => record_json, "included" => included })
+      Teamtailor::Parser.parse({"data" => record_json, "included" => included})
     end
 
     private
