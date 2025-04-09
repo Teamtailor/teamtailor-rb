@@ -134,5 +134,62 @@ RSpec.describe Teamtailor::Request do
         end.to(raise_error { Teamtailor::UnprocessableEntityError })
       end
     end
+
+    context "getting a 4xx response" do
+      it "raises a Teamtailor::ClientError" do
+        api_token = SecureRandom.uuid
+        request = Teamtailor::Request.new(
+          base_url: "http://api.teamtailor.localhost",
+          api_token: api_token,
+          api_version: 20_161_108,
+          path: "/v1/candidates"
+        )
+
+        stub_request(:get, "http://api.teamtailor.localhost/v1/candidates")
+          .to_return(status: 400, body: '{"errors":[{"status":400,"title":"Bad Request","detail":"Invalid request"}]}')
+
+        expect do
+          request.call
+        end.to raise_error(Teamtailor::ClientError)
+      end
+    end
+
+    context "getting a 5xx response" do
+      it "raises a Teamtailor::ServerError" do
+        api_token = SecureRandom.uuid
+        request = Teamtailor::Request.new(
+          base_url: "http://api.teamtailor.localhost",
+          api_token: api_token,
+          api_version: 20_161_108,
+          path: "/v1/candidates"
+        )
+
+        stub_request(:get, "http://api.teamtailor.localhost/v1/candidates")
+          .to_return(status: 500, body: '{"errors":[{"status":500,"title":"Internal Server Error","detail":"Something went wrong"}]}')
+
+        expect do
+          request.call
+        end.to raise_error(Teamtailor::ServerError)
+      end
+    end
+
+    context "getting an unexpected 301 response" do
+      it "raises a Teamtailor::UnknownResponseError" do
+        api_token = SecureRandom.uuid
+        request = Teamtailor::Request.new(
+          base_url: "http://api.teamtailor.localhost",
+          api_token: api_token,
+          api_version: 20_161_108,
+          path: "/v1/candidates"
+        )
+
+        stub_request(:get, "http://api.teamtailor.localhost/v1/candidates")
+          .to_return(status: 301, body: '{"errors":[{"status":301,"title":"Moved Permanently","detail":"The resource has been moved permanently to a new location."}]}')
+
+        expect do
+          request.call
+        end.to raise_error(Teamtailor::UnknownResponseError, "Unexpected error (status: 301)")
+      end
+    end
   end
 end
