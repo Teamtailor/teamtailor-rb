@@ -1,5 +1,10 @@
 ## Unreleased
 
+## v0.4.1 - 2025-04-09
+
+- Handle more errors [#15](https://github.com/Teamtailor/teamtailor-rb/pull/15)
+- Fix issue with invalid request header [#14](https://github.com/Teamtailor/teamtailor-rb/pull/14)
+
 ## v0.4.0 - 2021-09-06
 
 - Added `Client#create_upload`
