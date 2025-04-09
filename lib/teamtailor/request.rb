@@ -46,7 +46,7 @@ module Teamtailor
         "Authorization": "Token token=#{api_token}",
         "X-Api-Version" => api_version,
         "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-        "Content-Type" => "application/vnd.api+json; charset=utf-8",
+        "Content-Type" => "application/vnd.api+json",
       }
     end
   end

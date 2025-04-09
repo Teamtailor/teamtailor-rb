@@ -21,7 +21,7 @@ RSpec.describe Teamtailor::Request do
             "Authorization": "Token token=#{api_token}",
             "X-Api-Version" => 20_161_108,
             "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-            "Content-Type" => "application/vnd.api+json; charset=utf-8",
+            "Content-Type" => "application/vnd.api+json",
           }
         )
         .to_return(status: 200, body: { nonsense: true }.to_json, headers: {
@@ -29,7 +29,7 @@ RSpec.describe Teamtailor::Request do
                      "X-Rate-Limit-Limit" => 100,
                      "X-Rate-Limit-Remaining" => 100,
                      "X-Rate-Limit-Reset" => 1,
-                     "Content-Type" => "application/vnd.api+json; charset=utf-8",
+                     "Content-Type" => "application/vnd.api+json",
                    })
 
       page_result = request.call
@@ -77,7 +77,7 @@ RSpec.describe Teamtailor::Request do
               "Authorization": "Token token=#{api_token}",
               "X-Api-Version" => 20_161_108,
               "User-Agent" => "teamtailor-rb v#{Teamtailor::VERSION}",
-              "Content-Type" => "application/vnd.api+json; charset=utf-8",
+              "Content-Type" => "application/vnd.api+json",
             }
           )
           .to_return(status: 401, body: "")
