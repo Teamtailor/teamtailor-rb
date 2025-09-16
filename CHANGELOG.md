@@ -1,5 +1,9 @@
 ## Unreleased
 
+## v0.5.0 - 2025-09-16
+
+- Handle rate limit errors [#18](https://github.com/Teamtailor/teamtailor-rb/pull/18)
+
 ## v0.4.1 - 2025-04-09
 
 - Handle more errors [#15](https://github.com/Teamtailor/teamtailor-rb/pull/15)
