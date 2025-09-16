@@ -14,6 +14,8 @@ module Teamtailor
         Teamtailor::InvalidApiVersionError.new(error_message)
       when 422
         Teamtailor::UnprocessableEntityError.new(error_message)
+      when 429
+        RateLimitError.new
       when 400..499
         ClientError.new(error_message)
       when 500..599
@@ -45,6 +47,8 @@ module Teamtailor
   class UnloadedRelationError < ClientError; end
 
   class UnprocessableEntityError < ClientError; end
+
+  class RateLimitError < ClientError; end
 
   class UnknownResponseError < Error; end
 end
